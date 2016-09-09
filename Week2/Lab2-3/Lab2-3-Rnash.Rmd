@@ -1,0 +1,68 @@
+---
+title: "Lab2-3-Rnash"
+author: "Raphael Nash"
+date: "September 3, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+ 
+```
+
+Your task is to create an R dataframe that shows rates of tuberculosis infection by country. You shouldusetheinformationfromthetbdatabaseandtheattachedpopulation.csvfile. YourR dataframe should have the following columns:
+     Country, Year, Rate
+Where Rate is defined as Cases/Population.
+
+
+```{r, warning=FALSE, message = FALSE}
+
+library("RMySQL")
+library("DT")
+library("knitr")
+library("dplyr")
+library("ggplot2")
+library("plotly")
+conn <- dbConnect(MySQL(), user='rnash', host='localhost', dbname='tb')
+
+```
+
+```{r}
+
+population <- read.csv("population.csv")
+str(population) 
+kable(head(population))
+
+```
+
+
+
+```{r warning=FALSE}
+
+tbCases <- dbGetQuery(conn, "select 
+                                country, year, 
+                                sum( coalesce(child, 0) + coalesce(adult, 0) +coalesce( elderly,0 )) Cases 
+                              from  tb
+                                group by 
+                                country, year 
+                              having 
+                                sum( coalesce(child, 0) + coalesce(adult, 0) +coalesce( elderly,0 ))  > 0")
+kable(head ( tbCases) ) 
+
+```
+
+
+```{r warning=FALSE}
+populationWithTbCases <- left_join(x= tbCases, y=population)
+kable(head(populationWithTbCases))
+```
+
+```{r}
+populationWithTbCases$country <- as.factor(populationWithTbCases$country)
+populationWithTbCases$rate <- populationWithTbCases$Cases / populationWithTbCases$population
+kable(head(populationWithTbCases))
+```
+
+
+You may wnat to visualize this data to see where TB hotspots are, or where TB is on the rise so you could intervene and stop the spread.  

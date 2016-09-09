@@ -1,0 +1,124 @@
+---
+title: "#Hands On Labs 2.1 – SQL SELECT Basics"
+author: "Raphael Nash"
+output:
+  html_document:
+    css: ./hol.css
+    highlight: pygments
+    theme: cerulean
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, warning=FALSE, message = FALSE}
+
+library("RMySQL")
+library("DT")
+library("knitr")
+conn <- dbConnect(MySQL(), user='rnash', host='localhost', dbname='flights')
+
+```
+
+
+1.  Write a SELECT statement that returns all of the rows and columns in the planes table
+```{r}
+
+planes <- dbGetQuery(conn, "Select * from planes")
+datatable(planes)
+
+```
+
+2. Using the weather table, concatenate the year, month, and day columns to display a date in the form "3/17/2013"
+
+```{r}
+
+weatherDates <- dbGetQuery(conn, "select concat(month, '/' , day, '/' , year)   from weather")
+datatable(weatherDates)
+
+```
+
+3. Order by planes table by number of seats, in descending order.
+```{r}
+
+alaskaAirFirstDaysOfJune <- dbGetQuery(conn,
+                                   "select  * 
+                                    from flights 
+                                    where carrier = 'AS' and 
+                                    str_to_date(concat(month, '/' , day, '/' , year), '%m/%d/%Y') 
+                                          between  '2013-01-06' and  '2013-03-06' ")
+
+datatable(alaskaAirFirstDaysOfJune)
+
+```
+
+
+4. List only those planes that have an engine that is 'Reciprocating'
+
+```{r}
+
+reciprocatingEnginePlanes <- dbGetQuery(conn, "select *  from planes where engine = 'Reciprocating'")
+kable( head(reciprocatingEnginePlanes, 10))
+
+```
+
+5. List only the first 5 rows in the flights table
+
+```{r}
+first5 <- dbGetQuery(conn, "select  * from flights limit 5")
+kable( first5 )
+```
+
+6. What was the longest (non-blank) air time?
+```{r}
+dbGetQuery(conn, "select  max(air_time)  from flights ")
+```
+
+7. What was the shortest (non-blank) air time for Delta?
+```{r}
+dbGetQuery(conn, "select  min(air_time) from flights where carrier = 'DL' ")
+```
+
+8. Show all of the Alaska Airlines flights between June 1st, 2013 and June 3rd, 2013. Is the way the data is stored in the database helpful to you in making your query?
+```{r}
+reciprocatingEnginePlanes <- dbGetQuery(conn, "select *  from planes where engine = 'Reciprocating'")
+kable( head(reciprocatingEnginePlanes, 10))
+```
+It would have been easier to write this query if there was a true date field on the table
+
+9. Show all of the airlines whose names contain 'America'
+```{r}
+cariersLikeAmerica <- dbGetQuery(conn, "select * from airlines where name like '%America%'") 
+kable(cariersLikeAmerica)
+```
+
+10.  How many flights went to Miami?
+```{r}
+countFlightsMIA <- dbGetQuery(conn,  "select 
+	                                      case when month = 1 then 'Jan'
+		                                      when month = 6 then 'June'
+	                                      end  Month, 
+	                                      count(*) 
+                                      from 
+                                        flights 
+                                      where 
+	                                      dest = 'MIA' and
+	                                      year = 2013 and
+                                        month in (1,6)
+                                      group  by 
+                                          case when month = 1 then 'Jan'
+		                                      when month = 6 then 'June'
+	                                     end   ") 
+kable(countFlightsMIA)
+```
+
+There are more fligts to Miami for the New York area in January then June.
+
+12. What is the average altitude of airports?
+```{r, warning=FALSE}
+dbGetQuery(conn, "select avg(alt) from airports")
+
+```
+
