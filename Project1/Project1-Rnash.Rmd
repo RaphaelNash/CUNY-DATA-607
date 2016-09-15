@@ -1,0 +1,95 @@
+---
+title: "Project1"
+author: "Raphael Nash"
+date: "September 13, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library("stringr")
+library("DT")
+library("data.table")
+```
+
+#Read in file
+```{r}
+file <- readLines("tournamentinfo.txt")
+head(file)
+```
+
+#Get Rid of Header Records
+```{r}
+file <- file[5: length(file)]
+head(file)
+```
+
+#Intitialize Variables
+```{r}
+numPlayers <- length(file) / 3
+playerNumber <-vector()
+playerName <-vector()
+totalPoints <- vector()
+numGamesPlayed <-vector()
+opponents <-vector()
+state <- vector()
+preTournamentRating <- vector()
+```
+
+#Loop Through Records in File 3 at a time
+```{r}
+for ( i in 1:numPlayers)  {
+  i
+  rawPlayerData <- file[1:2]
+  
+  file <- file[4: length(file)]
+  
+  playerNumber <- c (playerNumber, as.numeric( str_extract ( substr(rawPlayerData[1], 3,7), '\\d{1,2}')))
+  
+  playerName <- c ( playerName, trimws(substr(rawPlayerData[1], 9,40)))
+  
+  totalPoints <- c ( totalPoints, as.numeric(substr(rawPlayerData[1], 42,44)))
+  
+  numGamesPlayed <-c ( numGamesPlayed, 
+                       length(unlist(str_extract_all(substr(rawPlayerData[1], 44,nchar(rawPlayerData[1])), "[WLD]")))) 
+  
+  opponents <- c ( opponents, 
+                  str_extract_all(substr(rawPlayerData[1], 45,nchar(rawPlayerData[1])), "\\d{1,2}"))
+  
+  state <- c ( state, trimws(substr(rawPlayerData[2], 3,6))) 
+  
+  preTournamentRating <- c ( preTournamentRating,   
+                             as.numeric(unlist (str_extract_all(rawPlayerData[2], "[:space:]\\d{3,4}" ))[2])) 
+}
+
+players <- data.table(
+  playerNumber = playerNumber,
+  playerName = playerName,
+  totalPoints = totalPoints,
+  numGamesPlayed = numGamesPlayed,
+  opponents = opponents,
+  state = state,
+  preTournamentRating = preTournamentRating,
+  opponentsPreTournamentAverage = 1
+  )
+```
+
+#Calculate Pre Tournement Opponent Average
+```{r warnings=FALSE, messages=FALSE, error=FALSE}
+
+for (i in 1:64) {
+    opponentsList <- as.numeric(unlist(players[playerNumber==i][["opponents"]]))
+    
+    opponentsVector <- as.vector(opponentsList)
+    
+    sumOppPreTourneyAvg <- sum(subset(players, playerNumber %in% opponentsVector)
+                                [,preTournamentRating]) / 
+                                    as.numeric(players[[ i , c("numGamesPlayed")]])
+    
+    players [ playerNumber == i,   opponentsPreTournamentAverage :=round(sumOppPreTourneyAvg,digits=2) ]
+
+}
+datatable(players)
+```
+
+
