@@ -1,0 +1,116 @@
+---
+title: "Week3-Assignment-RegEx"
+author: "Raphael Nash"
+date: "September 10, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(stringr)
+```
+
+
+
+```{r}
+raw.data <-"555-1239Moe Szyslak(636) 555-0113Burns, C. Montgomery555-6542Rev. Timothy Lovejoy555 8904Ned Flanders636-555-3226Simpson, Homer5553642Dr. Julius Hibbert"   
+```
+
+3.Copy the intorductory vector name stores the extracted names 
+
+```{r}
+name <- unlist(str_extract_all(raw.data, "[[:alpha:]., ]{2,}"))
+```
+
+3.1. Use the tools of this chapter to re-arrange the vector so that all of the elements conform to the standard first_name last_name
+
+```{r}
+first_last <- function(x){
+      
+  if ( str_detect(x,",")){
+    firstAndLast <- unlist(str_extract_all(x, "[[:alpha:]]{3,}")) 
+    currentName <- paste(trimws(firstAndLast[2]),  firstAndLast[1])
+  }  else if (str_detect(x, "^[:alpha:]{2,3}\\.") ) {
+      firstAndLast <- unlist(str_extract_all(x, "[[:alpha:]]{4,}"))
+      currentName <- paste(firstAndLast[1],  firstAndLast[2])
+    } else {
+      currentName <- x
+      
+    }
+  currentName
+}
+
+standardNameFormat <- unname(sapply( name, first_last ))
+standardNameFormat
+```
+
+3.2 Construct A logical Vector indicating whether a character has a title (Rev. or Dr.)
+
+```{r}
+
+hasTitle <- str_detect(name, "^[:alpha:]{2,3}\\.") 
+
+name
+hasTitle
+
+```
+
+3.2 Construct A logical Vector indicating whether a character has a second name
+
+```{r}
+
+hasSecondName <- str_detect(name, "[:space:][:alpha:]{1}\\.[:space:][:alpha:]+") 
+
+name
+hasSecondName
+
+```
+
+4. Describe the types of strings that confom to the following regular expresstions and construct and example that is matched by the regular expression.
+
+
+4.1 [0-9]+\\$
+
+One or more digits followed by a Dollar Sign
+```{r}
+ str_detect ("1234$", "[0-9]+\\$")
+```
+
+4.2 \\b[a-z]{1,4}
+
+The begining of a line starts with 1 to 4 occurrences of a lower case letter
+```{r}
+str_detect ("a", "\\b[a-z]{1,4}")
+str_detect ("ab", "\\b[a-z]{1,4}")
+str_detect ("abc", "\\b[a-z]{1,4}")
+str_detect ("abcd", "\\b[a-z]{1,4}")
+```
+
+4.3 .*?\\.txt$
+
+Anything with an optional space and then the line ends with ".txt"
+
+```{r}
+str_detect("abc .txt", ".*?\\.txt$")
+str_detect("abc.txt", ".*?\\.txt$")
+```
+
+4.4 \\d{2/\\d{2}/\\d{4}}
+
+Standard date format mm/dd/yyyy
+
+
+```{r}
+str_detect("01/01/2016", "\\d{2}/\\d{2}/\\d{4}")
+```
+
+4.5  <(.+?)>.+</\\1>
+
+This checks to see if you have HTML/XML tags that are properly closed with optional text between them. 
+
+```{r}
+str_detect("<foo>bar</foo>", "<(.+?)>.+</\\1>")
+```
