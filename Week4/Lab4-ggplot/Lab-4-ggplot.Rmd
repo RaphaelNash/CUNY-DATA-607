@@ -1,0 +1,73 @@
+---
+title: "Lab4-ggplot"
+author: "Raphael Nash"
+date: "September 16, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Load Data
+
+1. Load the diamonds dataset, which is included with the ggplot2 package. Identify which variables in the diamond set are numeric, and which are categorical (factors).
+
+```{r}
+library(ggplot2)
+library(knitr)
+library(DT)
+library(plotly)
+head(diamonds)
+str(diamonds)
+```
+
+Varaible | Variable Type
+---------|-------------
+cut      |Factor
+carat    |Factor
+color    |Factor
+clarity  |Factor
+depth    |Numeric
+table    |Numeric
+price    |Numeric
+x        |Numeric
+y        |Numeric
+x        |Numeric
+
+#Summary Stats
+2. Generate summary level descriptive statistics: Show the mean, median, 25th and 75th quartiles, min, and max for each of the applicable variables in diamonds.
+
+```{r}
+summary(diamonds)
+```
+
+3. Determine the frequency for each of the diamond colors.
+```{r}
+table(diamonds$color)
+ggplot(diamonds, aes(color)) + geom_bar()
+```
+
+4. Determine the frequency for each of the diamond cuts, by color
+```{r}
+table(diamonds$cut, diamonds$color)
+ggplot(diamonds, aes( cut, fill=color )) + geom_bar()
+```
+
+5. Create a graph for a single numeric variable.
+```{r}
+
+ggplot(diamonds, aes(price)) + geom_histogram(binwidth = 100)
+ggplot(diamonds, aes(price)) + geom_histogram(binwidth = 100)+facet_grid(cut ~ .)
+ ggplot(diamonds, aes(price)) + geom_histogram(binwidth = 500)+facet_grid(cut ~ clarity) +ylim(0,600)
+```
+
+
+```{r}
+ggplot(diamonds, aes(x=price, y=carat, color = clarity)) +geom_point()
+```
+
+```{r}
+p <- ggplot(diamonds, aes(x=price, y=carat, color = clarity)) +geom_point()
+ggplotly()
+```
