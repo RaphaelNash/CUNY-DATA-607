@@ -10,7 +10,28 @@ knitr::opts_chunk$set(echo = TRUE)
 library("stringr")
 library("DT")
 library("data.table")
+library("ggplot2")
+library("corrplot")
+library("plotly")
+library("knitr")
 ```
+
+#Assignment  
+In this project, you’re given a text file with chess tournament results where the information has some structure. Your job is to create an R Markdown file that generates a .CSV file (that could for example be imported into a SQL database) with the following information for all of the players:
+
+Player’s Name, Player’s State, Total Number of Points, Player’s Pre-Rating, and Average Pre Chess Rating of Opponents
+
+For the first player, the information would be:
+Gary Hua, ON, 6.0, 1794, 1605
+
+1605 was calculated by using the pre-tournament opponents’ ratings of 1436, 1563, 1600, 1610, 1649, 1663, 1716, and dividing by the total number of games played.
+
+If you have questions about the meaning of the data or the results, please post them on the discussion forum. Data science, like chess, is a game of back and forth…
+
+The chess rating system (invented by a Minnesota statistician named Arpad Elo) has been used in many other contexts, including assessing relative strength of employment candidates by human resource departments.
+
+#Hypothesis
+A chess players total points in this tournament will correlate to how good of a player that they are based on pre-tournament rating.
 
 #Read in file
 ```{r}
@@ -39,7 +60,7 @@ preTournamentRating <- vector()
 #Loop Through Records in File 3 at a time
 ```{r}
 for ( i in 1:numPlayers)  {
-  i
+  
   rawPlayerData <- file[1:2]
   
   file <- file[4: length(file)]
@@ -51,15 +72,18 @@ for ( i in 1:numPlayers)  {
   totalPoints <- c ( totalPoints, as.numeric(substr(rawPlayerData[1], 42,44)))
   
   numGamesPlayed <-c ( numGamesPlayed, 
-                       length(unlist(str_extract_all(substr(rawPlayerData[1], 44,nchar(rawPlayerData[1])), "[WLD]")))) 
+                       length(unlist(str_extract_all(substr(rawPlayerData[1], 
+                                                            44,nchar(rawPlayerData[1])), "[WLD]")))) 
   
   opponents <- c ( opponents, 
-                  str_extract_all(substr(rawPlayerData[1], 45,nchar(rawPlayerData[1])), "\\d{1,2}"))
+                  str_extract_all(substr(rawPlayerData[1], 
+                                         45,nchar(rawPlayerData[1])), "\\d{1,2}"))
   
   state <- c ( state, trimws(substr(rawPlayerData[2], 3,6))) 
   
   preTournamentRating <- c ( preTournamentRating,   
-                             as.numeric(unlist (str_extract_all(rawPlayerData[2], "[:space:]\\d{3,4}" ))[2])) 
+                             as.numeric(unlist (str_extract_all(
+                                                rawPlayerData[2], "[:space:]\\d{3,4}" ))[2])) 
 }
 
 players <- data.table(
@@ -83,13 +107,45 @@ for (i in 1:64) {
     opponentsVector <- as.vector(opponentsList)
     
     sumOppPreTourneyAvg <- sum(subset(players, playerNumber %in% opponentsVector)
-                                [,preTournamentRating]) / 
-                                    as.numeric(players[[ i , c("numGamesPlayed")]])
+                                [, preTournamentRating]) / 
+                                   as.numeric(players[[ i , c("numGamesPlayed")]])
     
     players [ playerNumber == i,   opponentsPreTournamentAverage :=round(sumOppPreTourneyAvg,digits=2) ]
 
 }
+
 datatable(players)
 ```
 
+
+Is the a playe
+
+```{r}
+varsToCorrelate <- players[,c("totalPoints", "preTournamentRating", "opponentsPreTournamentAverage" ), with=FALSE]
+corrM <- cor(varsToCorrelate)
+kable(corrM)
+corrplot(corrM, method = "ellipse", type = "upper")
+
+p <- ggplot(players, aes(x=preTournamentRating, y=totalPoints)) +
+         geom_point() +
+         stat_smooth(method = "lm", col = "red")
+
+ggplotly()
+
+p <- ggplot(players, aes(x=opponentsPreTournamentAverage, y=totalPoints)) +
+         geom_point() +
+         stat_smooth(method = "lm", col = "red")
+
+ggplotly()
+
+p <- ggplot(players, aes(x=opponentsPreTournamentAverage, y=preTournamentRating)) +
+         geom_point() +
+         stat_smooth(method = "lm", col = "red")
+
+ggplotly()
+```
+
+#Conclusions
+* This is a fair tournament.  All players play players of varying skill levels (as demonstrated my their pre tournament rating).  This shown by the fact that there is no correlation between a players pre tournament rating and the average rating of his/her opponent.  
+*There is a weak positive relationship between a person's pre tournament rating and the number of points a player receives (Pearson’s r = .6).  Therefore it is inconclusive that, but more likely than not that a players pre tournament ranking is related to their pre tournament rating.  To prove this conclusively, we would need data from many more chess tournaments.  
 
