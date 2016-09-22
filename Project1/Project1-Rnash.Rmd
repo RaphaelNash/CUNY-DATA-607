@@ -146,6 +146,8 @@ ggplotly()
 ```
 
 #Conclusions
+
 * This is a fair tournament.  All players play players of varying skill levels (as demonstrated my their pre tournament rating).  This shown by the fact that there is no correlation between a players pre tournament rating and the average rating of his/her opponent.  
-*There is a weak positive relationship between a person's pre tournament rating and the number of points a player receives (Pearson’s r = .6).  Therefore it is inconclusive that, but more likely than not that a players pre tournament ranking is related to their pre tournament rating.  To prove this conclusively, we would need data from many more chess tournaments.  
+
+* There is a weak positive relationship between a person's pre tournament rating and the number of points a player receives (Pearson’s r = .6).  Therefore it is inconclusive that, but more likely than not that a players pre tournament ranking is related to their pre tournament rating.  To prove this conclusively, we would need data from many more chess tournaments.  
 
