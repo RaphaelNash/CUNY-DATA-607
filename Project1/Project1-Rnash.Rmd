@@ -1,8 +1,11 @@
 ---
-title: "Project1"
+title: "CUNY DATA 607 Project 1"
 author: "Raphael Nash"
 date: "September 13, 2016"
-output: html_document
+output:
+  html_document:
+    toc: true
+
 ---
 
 ```{r setup, include=FALSE}
@@ -47,54 +50,57 @@ head(file)
 
 #Intitialize Variables
 ```{r}
-numPlayers <- length(file) / 3
-playerNumber <-vector()
-playerName <-vector()
-totalPoints <- vector()
-numGamesPlayed <-vector()
+num_players <- length(file) / 3
+player_number <-vector()
+player_name <-vector()
+total_points <- vector()
+num_games_played <-vector()
 opponents <-vector()
 state <- vector()
-preTournamentRating <- vector()
+pre_tournament_rating <- vector()
 ```
 
 #Loop Through Records in File 3 at a time
 ```{r}
-for ( i in 1:numPlayers)  {
+for ( i in 1:num_players)  {
   
   rawPlayerData <- file[1:2]
   
   file <- file[4: length(file)]
   
-  playerNumber <- c (playerNumber, as.numeric( str_extract ( substr(rawPlayerData[1], 3,7), '\\d{1,2}')))
+  player_number <- c (player_number, as.numeric( str_extract (
+    substr(rawPlayerData[1], 3, 7), '\\d{1,2}')))
   
-  playerName <- c ( playerName, trimws(substr(rawPlayerData[1], 9,40)))
+  player_name <- c ( player_name, trimws(substr(rawPlayerData[1], 9, 40)))
   
-  totalPoints <- c ( totalPoints, as.numeric(substr(rawPlayerData[1], 42,44)))
+  total_points <- c ( total_points, as.numeric(substr(rawPlayerData[1], 42, 44)))
   
-  numGamesPlayed <-c ( numGamesPlayed, 
-                       length(unlist(str_extract_all(substr(rawPlayerData[1], 
-                                                            44,nchar(rawPlayerData[1])), "[WLD]")))) 
+  num_games_played <-c ( num_games_played, length(unlist(str_extract_all(substr(rawPlayerData[1],
+                                                                                44,
+                                                                                nchar(rawPlayerData[1])),
+                                                                         "[WLD]")))) 
   
-  opponents <- c ( opponents, 
-                  str_extract_all(substr(rawPlayerData[1], 
-                                         45,nchar(rawPlayerData[1])), "\\d{1,2}"))
+  opponents <- c ( opponents, str_extract_all(substr(rawPlayerData[1],
+                                                     45,
+                                                     nchar(rawPlayerData[1])), 
+                                              "\\d{1,2}"))
   
-  state <- c ( state, trimws(substr(rawPlayerData[2], 3,6))) 
+  state <- c ( state, trimws(substr(rawPlayerData[2], 3, 6))) 
   
-  preTournamentRating <- c ( preTournamentRating,   
-                             as.numeric(unlist (str_extract_all(
-                                                rawPlayerData[2], "[:space:]\\d{3,4}" ))[2])) 
+  pre_tournament_rating <- c ( pre_tournament_rating,
+                               as.numeric(unlist (str_extract_all(rawPlayerData[2], 
+                                                                  "[:space:]\\d{3,4}" ))[2])) 
 }
 
 players <- data.table(
-  playerNumber = playerNumber,
-  playerName = playerName,
-  totalPoints = totalPoints,
-  numGamesPlayed = numGamesPlayed,
+  player_number = player_number,
+  player_name = player_name,
+  total_points = total_points,
+  num_games_played = num_games_played,
   opponents = opponents,
   state = state,
-  preTournamentRating = preTournamentRating,
-  opponentsPreTournamentAverage = 1
+  pre_tournament_rating = pre_tournament_rating,
+  opponents_pre_tournament_average = 1
   )
 ```
 
@@ -102,15 +108,16 @@ players <- data.table(
 ```{r warnings=FALSE, messages=FALSE, error=FALSE}
 
 for (i in 1:64) {
-    opponentsList <- as.numeric(unlist(players[playerNumber==i][["opponents"]]))
+    opponents_list <- as.numeric(unlist(players[player_number==i][["opponents"]]))
     
-    opponentsVector <- as.vector(opponentsList)
+    opponents_vector <- as.vector(opponents_list)
     
-    sumOppPreTourneyAvg <- sum(subset(players, playerNumber %in% opponentsVector)
-                                [, preTournamentRating]) / 
-                                   as.numeric(players[[ i , c("numGamesPlayed")]])
+    sumOppPreTourneyAvg <- sum(subset(players, player_number %in% opponents_vector)
+                                [, pre_tournament_rating]) / 
+                                   as.numeric(players[[ i, c("num_games_played")]])
     
-    players [ playerNumber == i,   opponentsPreTournamentAverage :=round(sumOppPreTourneyAvg,digits=2) ]
+    players [ player_number == i,   
+              opponents_pre_tournament_average := round(sumOppPreTourneyAvg, digits =2 ) ]
 
 }
 
@@ -118,27 +125,34 @@ datatable(players)
 ```
 
 
-Is the a playe
-
+#Check Correlations
 ```{r}
-varsToCorrelate <- players[,c("totalPoints", "preTournamentRating", "opponentsPreTournamentAverage" ), with=FALSE]
-corrM <- cor(varsToCorrelate)
+vars_to_correlate <- players[, c("total_points", 
+                                 "pre_tournament_rating", 
+                                 "opponents_pre_tournament_average" 
+                                 ),
+                             with = FALSE]
+
+corrM <- cor(vars_to_correlate)
 kable(corrM)
 corrplot(corrM, method = "ellipse", type = "upper")
+```
 
-p <- ggplot(players, aes(x=preTournamentRating, y=totalPoints)) +
+#Scatterplots
+```{r}
+p <- ggplot(players, aes(x = pre_tournament_rating, y = total_points)) +
          geom_point() +
          stat_smooth(method = "lm", col = "red")
 
 ggplotly()
 
-p <- ggplot(players, aes(x=opponentsPreTournamentAverage, y=totalPoints)) +
+p <- ggplot(players, aes(x = opponents_pre_tournament_average, y = total_points)) +
          geom_point() +
          stat_smooth(method = "lm", col = "red")
 
 ggplotly()
 
-p <- ggplot(players, aes(x=opponentsPreTournamentAverage, y=preTournamentRating)) +
+p <- ggplot(players, aes(x = opponents_pre_tournament_average, y = pre_tournament_rating)) +
          geom_point() +
          stat_smooth(method = "lm", col = "red")
 
@@ -150,4 +164,3 @@ ggplotly()
 * This is a fair tournament.  All players play players of varying skill levels (as demonstrated my their pre tournament rating).  This shown by the fact that there is no correlation between a players pre tournament rating and the average rating of his/her opponent.  
 
 * There is a weak positive relationship between a person's pre tournament rating and the number of points a player receives (Pearson’s r = .6).  Therefore it is inconclusive that, but more likely than not that a players pre tournament ranking is related to their pre tournament rating.  To prove this conclusively, we would need data from many more chess tournaments.  
-
