@@ -1,0 +1,109 @@
+---
+title: "Week5-TidyData-Rnash"
+author: "Raphael Nash"
+date: "9/24/2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Assignment
+
+The purpose of the assignment is to read in a file with on time and delayed number of flights for 2 airlines and perform an analysis compaing arrival delays of the two airlines
+
+#Load Libraries
+
+```{r message== FALSE, warning=FALSE}
+library(tidyr)
+library(dplyr)
+library(knitr)
+```
+
+#Read in CSV
+
+```{r}
+airline_status <- read.csv("airline_status.csv", stringsAsFactors =  FALSE)
+kable(airline_status)
+```
+
+#Tidy Data Set
+
+Our goal is to create a dataset that looks as follows:
+
+Airline | City     | Delayed | On_Time
+--------|----------|--------|---------
+Delta   | Atlanta  |1,900    | 3,000
+Delta   | New York |2,000    | 1,900
+AA      | Chicago  | 1,000   |2,000
+
+Since each observation is an ariline at a particular city.
+
+First we need to unpivot the column headings for each row into a row.  
+```{r}
+
+airline_status$Status[airline_status$Status=="on-time"] <- "on_time" #mutate does not like '-' in a column header
+
+airline_status <-
+  airline_status %>% 
+  gather("City", "n", 3:7)
+
+kable(airline_status)
+```
+
+Now we need to pivot the on-time and delayed count to the column headings.
+```{r}
+airline_status <-
+  airline_status %>% 
+  spread("Status", "n")
+kable(airline_status)
+```
+
+#Add Derived Values
+
+To help with the analysis I am adding the ratio of on time and delayed flights to the data frame.  
+```{r}
+airline_status <- 
+  airline_status %>% 
+  mutate(ratio_on_time = on_time/(delayed + on_time), ratio_delayed = 1 - ratio_on_time )
+kable(airline_status)
+```
+
+#Perform Analysis
+
+My first analysis will be to see what areline has the best overall ontime rate.  I will do this by grouping the frame by airline and summing the the ontime and delayed flights for that airline and then caclulating the ontime and delayed ratio at the higher level of analysis.  
+```{r}
+total_percent_on_time <- 
+  airline_status %>% 
+  group_by(Airline) %>% 
+  summarise (total_delayed = sum(delayed), total_on_time = sum(on_time)) %>% 
+  mutate (total_ratio_on_time =  total_on_time / ( total_on_time + total_delayed ))
+
+kable(total_percent_on_time)
+
+most_on_time_airline <- 
+  total_percent_on_time %>% 
+  filter (total_ratio_on_time == max(total_ratio_on_time))
+```
+
+
+Now, I will what airline has the most variance in its on time percentage.  To do this I will calculate the straight average and standard deviation of the airlines on-time ratio, and then see what airline has the lowest standard deviation.  
+```{r}
+summary_stats_by_airline <-  
+  airline_status %>% 
+  group_by(Airline) %>% 
+  summarise(mean_ratio_ontime = mean(ratio_on_time), sd_ratio_on_time = sd(ratio_on_time))
+
+kable(summary_stats_by_airline)
+
+most_consistent_airline <- 
+  summary_stats_by_airline %>% 
+  filter (sd_ratio_on_time == min(sd_ratio_on_time))
+```
+
+The airline with the best on-time percentage is **`r most_on_time_airline[[1,"Airline"]]`** with on on-time percentage of **`r round(most_on_time_airline[[1,"total_ratio_on_time"]], digits = 4) *100 `%**
+
+
+The airline with the most consistent performance is **`r most_consistent_airline[[1,"Airline"]]`** with a standard deviation of the percentage on-time of **`r round(most_consistent_airline[[1,"sd_ratio_on_time"]], digits = 4) *100 `%**
+
