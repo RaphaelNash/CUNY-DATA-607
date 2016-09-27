@@ -1,8 +1,9 @@
 ---
 title: "Week5-TidyData-Rnash"
 author: "Raphael Nash"
-date: "9/24/2016"
-output: html_document
+output: 
+  html_document: 
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -15,7 +16,7 @@ The purpose of the assignment is to read in a file with on time and delayed numb
 
 #Load Libraries
 
-```{r message== FALSE, warning=FALSE}
+```{r message = FALSE, warning = FALSE}
 library(tidyr)
 library(dplyr)
 library(knitr)
@@ -40,7 +41,7 @@ AA      | Chicago  | 1,000   |2,000
 
 Since each observation is an ariline at a particular city.
 
-First we need to unpivot the column headings for each row into a row.  
+First, we need to unpivot the column headings and place each column heading into a row.
 ```{r}
 
 airline_status$Status[airline_status$Status=="on-time"] <- "on_time" #mutate does not like '-' in a column header
@@ -62,7 +63,7 @@ kable(airline_status)
 
 #Add Derived Values
 
-To help with the analysis I am adding the ratio of on time and delayed flights to the data frame.  
+To help with the analysis I am adding the ratio of on-time and delayed flights to the data frame.  
 ```{r}
 airline_status <- 
   airline_status %>% 
@@ -72,7 +73,7 @@ kable(airline_status)
 
 #Perform Analysis
 
-My first analysis will be to see what areline has the best overall ontime rate.  I will do this by grouping the frame by airline and summing the the ontime and delayed flights for that airline and then caclulating the ontime and delayed ratio at the higher level of analysis.  
+My first analysis will be to see what airline has the best overall on-time rate.  I will do this by grouping the data frame by airline and summing the on-time and delayed flights for that airline and then calculate the on-time ratio at the higher level of analysis.  
 ```{r}
 total_percent_on_time <- 
   airline_status %>% 
@@ -88,7 +89,7 @@ most_on_time_airline <-
 ```
 
 
-Now, I will what airline has the most variance in its on time percentage.  To do this I will calculate the straight average and standard deviation of the airlines on-time ratio, and then see what airline has the lowest standard deviation.  
+The second analysis I will perform is to see what airline has the most variance in its on-time performance.   To do this I will calculate the straight average and standard deviation of the airlines on-time ratio, and then see what airline has the lowest standard deviation.  
 ```{r}
 summary_stats_by_airline <-  
   airline_status %>% 
@@ -104,6 +105,6 @@ most_consistent_airline <-
 
 The airline with the best on-time percentage is **`r most_on_time_airline[[1,"Airline"]]`** with on on-time percentage of **`r round(most_on_time_airline[[1,"total_ratio_on_time"]], digits = 4) *100 `%**
 
-
 The airline with the most consistent performance is **`r most_consistent_airline[[1,"Airline"]]`** with a standard deviation of the percentage on-time of **`r round(most_consistent_airline[[1,"sd_ratio_on_time"]], digits = 4) *100 `%**
+
 
