@@ -10,8 +10,8 @@
       <title>R in Action</title>
       <author1>Robert Kabacoff</author1>
    </book>
-   <id>Book3</id>
    <book>
+      <id>Book3</id>
       <title>R for Data Science</title>
       <author1>Hadley Wickham</author1>
       <author2>Garret Grolemund</author2>
