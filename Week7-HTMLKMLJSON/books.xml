@@ -3,17 +3,32 @@
    <book>
       <id>Book1</id>
       <title>R Cookbook</title>
-      <author1>Paul Teetor</author1>
+           <authors>
+      <author>Paul Teetor</author>
+           </authors>
+        <price>
+        	46.83
+        </price>
    </book>
    <book>
       <id>Book2</id>
       <title>R in Action</title>
-      <author1>Robert Kabacoff</author1>
+      <authors>
+      <author>Robert Kabacoff</author>
+   	  </authors>
+   	  <price>
+   	  	33.96
+   	  	</price>
    </book>
    <book>
       <id>Book3</id>
       <title>R for Data Science</title>
-      <author1>Hadley Wickham</author1>
-      <author2>Garret Grolemund</author2>
+      <authors>
+      <author>Hadley Wickham</author>
+      <author>Garret Grolemund</author>
+      </authors>
+      <price>
+      	39.99
+      </price>
    </book>
 </books>
