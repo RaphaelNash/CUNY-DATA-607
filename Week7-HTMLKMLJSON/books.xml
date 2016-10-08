@@ -3,23 +3,17 @@
    <book>
       <id>Book1</id>
       <title>R Cookbook</title>
-      <authors>
-         <author1>Paul Teetor</author1>
-      </authors>
+      <author1>Paul Teetor</author1>
    </book>
    <book>
       <id>Book2</id>
       <title>R in Action</title>
-      <authors>
-         <author1>Robert Kabacoff</author1>
-      </authors>
+      <author1>Robert Kabacoff</author1>
    </book>
    <id>Book3</id>
    <book>
       <title>R for Data Science</title>
-      <authors>
-         <author1>Hadley Wickham</author1>
-         <author2>Garret Grolemund</author2>
-      </authors>
+      <author1>Hadley Wickham</author1>
+      <author2>Garret Grolemund</author2>
    </book>
 </books>
