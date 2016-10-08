@@ -1,0 +1,24 @@
+<books>
+   <book>
+      <id>Book1</id>
+      <title>R Cookbook</title>
+      <authors>
+         <author>Paul Teetor</author>
+      </authors>
+   </book>
+   <book>
+      <id>Book2</id>
+      <title>R in Action</title>
+      <authors>
+         <author>Robert Kabacoff</author>
+      </authors>
+   </book>
+   <id>Book3</id>
+   <book>
+      <title>R for Data Science</title>
+      <authors>
+         <author>Hadley Wickham</author>
+         <author>Garret Grolemund</author>
+      </authors>
+   </book>
+</books>
