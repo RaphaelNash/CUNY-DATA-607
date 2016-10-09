@@ -1,0 +1,253 @@
+---
+title: "CUNY-DATA-607-Project2-Untidy-Data-Analysis"
+author: "Raphael Nash"
+date: "9/30/2016"
+output:
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, out.width='1000px', dpi=200)
+```
+
+```{r message=FALSE, warning=FALSE}
+library("stringr")
+library("DT")
+library("data.table")
+library("ggplot2")
+library("corrplot")
+library("plotly")
+library("knitr")
+library("ggplot2")
+library("corrplot")
+library("rvest")
+library("dplyr")
+library("tidyr")
+```
+
+#Overview
+
+In this assignement we need to take 3 untidy data sets that our classmates provided to use and perform the analysis requested
+
+#Massey Rating
+
+Leland Randles asked does offense or defense matter more when it comes to Massey Ratings for college football teams.  He provided the dataset at the following location:  http://www.masseyratings.com/cf/years.txt
+
+##Aquire Data
+```{r}
+
+file <- readLines("Massey.txt")
+
+team_v <- vector()
+year_v <-vector()
+offense_v <- vector()
+defense_v <- vector()
+rating_v <- vector()
+
+# Skip first 9 rows 
+file <- file[9: length(file)]
+file_rows <- length(file)
+
+# Loop through file 
+outer_counter <- 0
+while (outer_counter < 69 ) { #File has 69 years in it
+  year <-  as.factor(trimws(file[[1]])) 
+  
+  # Grab top 10 teams for the year and loop througth them
+  chunk <- file [7:16]
+  for (inner_counter in 1:10) {
+      
+    team_v<-  c(team_v,    trimws(substr(chunk[[inner_counter]],4,20))) 
+    offense_v <- c(offense_v, as.numeric( trimws(substr(chunk[[inner_counter]],47,49)))) 
+    defense_v <- c(defense_v, as.numeric( trimws(substr(chunk[[inner_counter]],53,55)))) 
+    rating_v <-  c (rating_v, as.numeric( trimws(substr(chunk[[inner_counter]],65,70)))) 
+    year_v <- c(year_v, year) 
+  
+  } # end for
+  outer_counter  <<- outer_counter + 1
+  file <- file [18:length(file)]
+ 
+} #end while 
+
+massey_ratings <- data.frame( year = year_v,
+                       team=team_v, 
+                       offense = offense_v,  
+                       defense = defense_v,
+                       rating = rating_v )
+
+datatable(massey_ratings)
+```
+
+##Check Correlations
+```{r}
+corrM <- cor(massey_ratings[,c("offense","defense", "rating")])
+kable(corrM)
+corrplot(corrM, type="upper", method = "ellipse")
+ggplot(massey_ratings, aes( x = defense, y= rating)) +geom_point() + ggtitle( "Defense vs Ratings") + theme(  text = element_text(size=6))
+ggplot(massey_ratings, aes( x = offense, y= rating)) +geom_point() + ggtitle("Offense vs Ratings") + theme(  text = element_text(size=6))
+
+```
+
+## Conculsions 
+There really does not seem to be any correlation between either offense or defense and rating therefore I can not say that either of them matters more. 
+
+#Walking Dead Viewership
+
+Walt Wells provided a link to the Wikipedia page for Walking Dead Viewership by Episode:  https://en.wikipedia.org/wiki/Template:The_Walking_Dead_ratings
+
+Most TV shows gets cancelled when viewership starts to fall.  Therefore I am asking did viewership for this show fall over the last two seasons?
+
+##Acquire Data
+```{r}
+#Read table from wikipedia
+
+#Begin code based on https://codedump.io/share/Unw54jjrt1cG/1/web-scraping-using-rvest-on-a-tennis-table-from-wiki
+
+walking_dead_url <- "https://en.wikipedia.org/wiki/Template:The_Walking_Dead_ratings"
+html_tables  <- walking_dead_url %>%   
+  read_html() %>% 
+  html_nodes( ".wikitable") %>% 
+  html_table(fill = TRUE, header = TRUE ) 
+
+#End code based on https://codedump.io/share/Unw54jjrt1cG/1/web-scraping-using-rvest-on-a-tennis-table-from-wiki
+
+data <- html_tables [[2]]
+kable(head(data))
+```
+
+##Tidy Data
+
+```{r}
+#Replace column headings with first row of data
+colnames(data) <- c("season", 1:(ncol(data)-1 ))
+
+#Rotate data to make it "Long"
+data <- data[-1,] %>% 
+  gather( "episode", "viewers", 2:ncol(data))  %>% 
+  filter( viewers != "—")
+
+kable(head(data))
+
+#Cast data to proper types
+data$season <- as.factor(data$season)
+data$episode <- as.numeric(data$episode)
+data$viewers <- as.numeric(data$viewers)
+
+#Add the change in viewership from episode to episode and a 
+#column that has season and episode concatenated to bettter display graph
+data <- data %>%
+  arrange( season, episode) %>%
+  mutate( delta_viewers = viewers- lag(viewers) ) %>%
+  mutate( season_episode = paste(season, "-", episode, sep="") )
+ 
+data[1,"delta_viewers"] <- data[1,"viewers"]
+
+kable(head(data))
+```
+
+##Analyze Data
+```{r}
+#plot data as it is on Wikipedia 
+ggplot(data, aes(x=season_episode, y=viewers, fill=season)) + 
+  geom_bar(stat="identity") +
+  theme(  text = element_text(size=6), axis.text.x = element_text(angle=90))  +
+  ggtitle ("Walking dead viewership per episode in millions")
+
+#Get just the last 2 seasons
+last_two_seasons <- filter(data, season %in% c(5,6))
+
+#Average the change in viewership per episode over the last two seasons
+average_delta_per_episode <- sum(last_two_seasons$delta_viewers) / length(last_two_seasons)
+```
+
+
+The average viewership chnaged by `r round(average_delta_per_episode, digits = 2 ) ` millions per episode over the last 2 seasons.  Therefore I would confirm my hypothesis that viewership declined therefore the walking dead was cancelled.   Also note that in the graph the last 2 episodes had an uptick in viewership therefore if you through out those two episodes the average decline per episode would be greater.  It is common that the series finale would have an uptick in viewership.    
+
+#Pittsburgh Air Quality
+
+I (Raphael Nash) submitted a data set on the air quality in Pittsburgh, PA.  In Pittsburgh durring the summer we have days that are "aire quaility action days".  Durring these days anyone with respritory problems should stay indoors.  The worst pollutant in Pittsburgh is called PM2.5 otherwise know as fine particulates, mostly from coal fired industry.  I would like to check if PM2.5 is higer in the summer then the winter.  I found a data set at: https://data.wprdc.org/dataset/allegheny-county-air-quality/resource/967f1285-f8fb-4785-9673-64a8ae47588d .  This dataset only includes data from the dates 20160115 - 20161001 .  
+
+##Aquire Data
+```{r}
+pgh_air_quality <- read.csv("pgh_air_quality.csv", stringsAsFactors = FALSE)
+pgh_air_quality$date <- as.Date(pgh_air_quality$datetime)
+pgh_air_quality$site <- as.factor(pgh_air_quality$site )
+kable(head(pgh_air_quality))
+```
+
+##Prepare Data for PM2.5
+```{r}
+#Subset only data related to PM2.5 Particles
+pgh_pm25 <- pgh_air_quality[, c("site", "date", "stat", "PM25")]
+pgh_pm25 <- drop_na(pgh_pm25,  PM25)
+
+kable(head(pgh_pm25))
+
+#Rotate data so that it is one observation per row
+#an observation is a measurement at a site on a day
+pgh_pm25 <- spread(pgh_pm25, stat, PM25) 
+
+#Add Month as Month Number
+pgh_pm25 <- mutate(pgh_pm25, month= as.numeric(format(date,"%m"))) 
+
+kable(head(pgh_pm25))
+
+
+#Average all daily max readings for a month
+pgh_pm25_avg_max <-  pgh_pm25  %>%
+  drop_na(Max) %>% 
+  group_by(site,month) %>% 
+  summarise(avg_max= mean(Max))
+
+kable(head(pgh_pm25_avg_max))
+```
+
+##Analyze Data for PM2.5
+```{r}
+ggplot(pgh_pm25_avg_max, aes(x= as.factor(month), y = avg_max, group = site, colour= site)) + geom_line()  + xlab("Month") + ylab("Avg Max PM2.5") + ggtitle("Avg Daily Max PM2.5B Particles for the by month for 20160115 - 20161001")
+```
+
+I found it intresting that "Liberty 2" shows a clear seasonal pattern, but at the Lincoln site PM2.5 particles keep on increasing. So I found more documentation at  http://www.achd.net/air/publiccomment2014/netrev2014draft.pdf on the Allegheny County Health Dept (ACHD) Air Quality monitoring site.  This documnet notes that Lincoln and Liberty 2 sites are down wind of USS Clariton Works, a Coke processing plant.  Coke is made from coal and is the raw fuel for steel blast furnaces.  It would be intresting to see if there is an issue at USS Clariton thhat is causing the uptrend in PM2.5.
+
+
+Per the daily summaries that the ACHD puts out (http://www.achd.net/airqual/DailySummary.PDF), it looks like PM2.5B is the better measure. It is measured at 2 sites one in Lawernceville, a neighborhood in Pittsburgh that is undergoing a revitilization, and at a site in Avolon which is 6 miles down the Ohio river from downtown Pittsburgh, and a largley residential borough.  
+
+
+##Prepare Data for PM2.5B
+```{r}
+#Subset only data related to PM2.5 Particles
+pgh_pm25B <- pgh_air_quality[, c("site", "date", "stat", "PM25B")]
+pgh_pm25B <- drop_na(pgh_pm25B,  PM25B)
+
+kable(head(pgh_pm25B))
+
+#Rotate data so that it is one observation per row
+#an observation is a measurement at a site on a day
+pgh_pm25B <- spread(pgh_pm25B, stat, PM25B) 
+
+#Add Month as Month Number
+pgh_pm25B <- mutate(pgh_pm25B, month= as.numeric(format(date,"%m"))) 
+
+kable(head(pgh_pm25B))
+
+
+#Average all daily max readings for a month
+pgh_pm25B_avg_max <-  pgh_pm25B  %>%
+  drop_na(Max) %>% 
+  group_by(site,month) %>% 
+  summarise(avg_max= mean(Max))
+
+kable(head(pgh_pm25B_avg_max))
+```
+
+##Analyze Data for PM2.5B
+```{r}
+ggplot(pgh_pm25B_avg_max, aes(x= as.factor(month), y = avg_max, group = site, colour= site)) + geom_line()  + xlab("Month") + ylab("Avg Max PM2.5B") + ggtitle("Avg Daily Max PM2.5B Particles for the by month for 20160115 - 20161001")
+```
+
+##Pittsburgh Air Quality Conclusions
+The graph of the Avalon and Lawrenceville, show a clear peak in the summer months.  However, the Lawerenceville graph shows a spike of PM2.5 in January.  It would be intresting see if there where any construction projects going on in January as Lawerenceville is a quickly gentrifying neighborhood.  
+
+Also, One should be cautious about reading too much into theese graphs as then only contain data for less then 1 year.  
+

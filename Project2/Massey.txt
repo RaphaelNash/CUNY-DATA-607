@@ -1,0 +1,1180 @@
+Key:
+  Off = offensive rank
+  Def = defensive rank
+  Sched = schedule rank
+  Rating = rating relative to "average" team
+  Dom = dominance factor (% of games would win vs. remaining top 10 teams)
+
+
+1930
+Teams Rated:           106
+Average Game Score:  24.14   3.36
+Homefield:            2.27
+St. Dev.:            15.39
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Notre Dame       10  0  0  26.50   7.40     2     4    10    34.52   0.767
+ 2 Alabama          10  0  0  27.10   1.30     4     3    24    33.53   0.745
+ 3 Northwestern      7  1  0  22.75   4.50     5     6     5    26.96   0.582
+ 4 Tennessee         9  1  0  20.90   3.10    12     1    17    24.48   0.511
+ 5 USC               8  2  0  38.20   6.60     1    42    16    22.30   0.457
+ 6 Washington St     9  1  0  21.80   5.60    10     8    34    21.48   0.435
+ 7 Michigan          8  0  1  12.33   2.56    14     5    35    20.83   0.417
+ 8 Stanford          9  1  1  22.91   6.27     7    19    15    19.66   0.386
+ 9 Army              9  1  1  24.36   2.00    37     2     9    18.30   0.356
+10 Texas             8  1  1  17.90   2.00    17     9    30    18.01   0.344
+
+1931
+Teams Rated:           113
+Average Game Score:  21.28   3.38
+Homefield:            3.54
+St. Dev.:            13.19
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 USC              10  1  0  33.00   4.73     1    12     4    38.54   0.811
+ 2 St. Mary's        8  2  0  11.90   6.50     7     1     2    32.74   0.657
+ 3 California        8  2  0  10.60   4.10    13     2     3    29.97   0.574
+ 4 Tulane           11  1  0  29.17   4.67     2    15    29    29.67   0.564
+ 5 Tennessee         9  0  1  24.30   1.50     6     6    38    27.49   0.496
+ 6 Oregon            6  2  2   9.00   8.70     8     5     1    26.72   0.472
+ 7 Stanford          7  2  2  14.55   4.00    15     4     5    24.77   0.411
+ 8 Georgia           8  2  0  20.10  11.80     5    22    16    23.76   0.380
+ 9 Pittsburgh        8  1  0  31.11   4.11     4    37    40    22.31   0.337
+10 Alabama           9  1  0  36.00   5.70     3    50    61    20.91   0.297
+
+1932
+Teams Rated:           119
+Average Game Score:  20.78   3.15
+Homefield:            1.81
+St. Dev.:            12.75
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 USC              10  0  0  20.10   1.30     1     5    15    30.02   0.721
+ 2 Michigan          8  0  0  15.38   1.62     5     1    13    29.42   0.697
+ 3 Purdue            7  0  1  20.50   5.25     3     9    21    24.34   0.542
+ 4 Michigan St       7  1  0  27.50   8.00     2    23    11    23.64   0.518
+ 5 Texas Christian  10  0  1  25.73   2.09     8     7    30    22.78   0.489
+ 6 Wisconsin         6  1  1  18.88   6.00     4    11     9    22.48   0.480
+ 7 Colgate           9  0  0  29.33   0.00     6    14    91    20.81   0.424
+ 8 Pittsburgh        8  1  2  16.55   5.45    14     6     8    19.52   0.382
+ 9 Centenary         8  0  1  20.33   2.89    26     2    34    19.27   0.377
+10 Ohio St           4  1  3  11.25   5.12    27     3     3    19.06   0.371
+
+1933
+Teams Rated:           127
+Average Game Score:  18.30   3.11
+Homefield:            1.48
+St. Dev.:            11.39
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Michigan          7  0  1  16.38   2.25     2     3    13    23.55   0.623
+ 2 Pittsburgh        8  1  0  16.33   1.44     4     2    20    23.46   0.620
+ 3 USC              10  1  1  21.42   2.50     3    10     8    22.17   0.572
+ 4 Oregon            9  1  0  16.50   5.00     9     5    16    21.10   0.531
+ 5 Nebraska          8  1  0  15.33   2.11    14     8    37    19.98   0.489
+ 6 Princeton         9  0  0  24.11   0.89    12     9    74    19.77   0.481
+ 7 Minnesota         4  0  4   8.00   4.00    25     1     3    19.55   0.472
+ 8 Duquesne         10  1  0  18.73   3.00    16     4    21    18.73   0.441
+ 9 Columbia          8  1  0  19.89   5.00    10    20    71    17.49   0.394
+10 Purdue            6  1  1  13.62   4.62    13    19    17    17.03   0.377
+
+1934
+Teams Rated:           124
+Average Game Score:  19.62   3.58
+Homefield:            1.12
+St. Dev.:            12.05
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Minnesota         8  0  0  33.75   4.75     2    18    25    29.50   0.729
+ 2 Alabama          10  0  0  31.60   4.50     1    35    45    27.65   0.670
+ 3 Pittsburgh        8  1  0  22.78   4.89     4     6    34    25.67   0.604
+ 4 Colgate           7  1  0  23.50   4.75    12     2    17    23.39   0.525
+ 5 Ohio St           7  1  0  33.38   4.25     3    32    22    23.31   0.523
+ 6 Tulane           10  1  0  19.55   7.55     5    17    43    20.46   0.423
+ 7 Tennessee         8  2  0  17.50   5.80    13     4    19    20.14   0.412
+ 8 Navy              8  1  0  15.33   7.78    10     8    57    19.68   0.396
+ 9 Rice              9  1  1  18.64   4.00     9    12    41    19.31   0.383
+10 Stanford          9  1  1  20.36   3.91    14    10    37    17.85   0.335
+
+1935
+Teams Rated:           128
+Average Game Score:  20.38   3.41
+Homefield:            0.93
+St. Dev.:            13.59
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Stanford          8  1  0  13.44   1.44     9     1    17    34.49   0.716
+ 2 SMU              12  1  0  22.15   3.00     5     2    12    31.60   0.641
+ 3 Minnesota         8  0  0  24.25   5.75     1     8    21    31.08   0.626
+ 4 California        9  1  0  16.30   2.20    12     3     7    28.94   0.561
+ 5 Texas Christian  12  1  0  20.38   5.62     3     6    24    27.99   0.532
+ 6 Ohio St           7  1  0  29.62   7.12     2    29    25    25.34   0.450
+ 7 Louisiana St      9  2  0  20.27   3.73    15     4    15    24.69   0.432
+ 8 UCLA              8  2  0  16.00   7.90     4    17    20    24.22   0.416
+ 9 Notre Dame        7  1  1  15.89   6.89    13    11    26    21.49   0.335
+10 Fordham           6  1  2  14.89   4.56    21    10    11    19.73   0.290
+
+1936
+Teams Rated:           131
+Average Game Score:  20.11   3.90
+Homefield:            2.37
+St. Dev.:            13.76
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Santa Clara       8  1  0  15.44   4.00     5     3    19    25.78   0.606
+ 2 Duquesne          8  2  0  14.00   2.80     9     2    13    25.22   0.589
+ 3 Louisiana St      9  1  1  26.82   4.91     1    11     9    25.14   0.586
+ 4 Pittsburgh        8  1  1  22.40   3.40     2     7    18    24.79   0.576
+ 5 Texas Christian   9  2  2  12.31   4.46     7     4    14    22.97   0.519
+ 6 Alabama           8  0  1  18.67   3.89     6     5    37    22.48   0.503
+ 7 Minnesota         7  1  0  25.38   4.00     3    33    45    20.40   0.437
+ 8 Arkansas          7  3  0  17.80   8.70     4    19     6    19.43   0.407
+ 9 Yale              7  1  0  16.38   7.50    18     8    35    19.15   0.399
+10 Duke              9  1  0  20.80   2.80    11    13    68    18.48   0.378
+
+1937
+Teams Rated:           126
+Average Game Score:  19.31   3.58
+Homefield:            1.29
+St. Dev.:            12.41
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Pittsburgh        9  0  1  20.30   3.40     2     3    10    26.83   0.688
+ 2 Santa Clara       9  0  0  18.11   1.00     3     2    56    26.30   0.672
+ 3 Fordham           7  0  1  22.75   2.00     5     1     1    26.24   0.670
+ 4 California       10  0  1  19.45   3.00     1     4    19    25.77   0.655
+ 5 Villanova         8  0  1  20.56   0.78     7    18    65    19.19   0.438
+ 6 Louisiana St      9  2  0  21.27   3.00    12     9    15    18.31   0.408
+ 7 Alabama           9  1  0  22.50   3.30    10    13    53    18.26   0.407
+ 8 Dartmouth         7  0  2  27.56   3.67     6    22    37    17.68   0.388
+ 9 Auburn            6  2  3  11.55   3.27    23     6     6    16.34   0.345
+10 Rice              6  3  2  10.64   8.55    15    16     5    15.86   0.330
+
+1938
+Teams Rated:           122
+Average Game Score:  20.56   4.43
+Homefield:            1.83
+St. Dev.:            12.48
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Tennessee        11  0  0  26.64   1.45     1     6    43    25.20   0.683
+ 2 USC               9  2  0  15.64   5.91     3     5     3    23.97   0.644
+ 3 California       10  1  0  19.91   4.00     6     4    10    21.52   0.562
+ 4 Notre Dame        8  1  0  16.56   4.33     7     3    14    21.36   0.556
+ 5 Texas Christian  11  0  0  24.45   5.45     2    24    84    20.46   0.525
+ 6 Duke              9  1  0  11.70   0.70    30     1    46    17.78   0.433
+ 7 Villanova         8  0  1  26.89   5.56     9    16    37    17.48   0.423
+ 8 Alabama           7  1  1  16.56   4.44    14    10    24    17.27   0.416
+ 9 Minnesota         6  2  0  12.12   4.75    15    12    12    16.66   0.395
+10 Holy Cross        8  1  0  25.00   5.67     8    20    40    15.68   0.363
+
+1939
+Teams Rated:           124
+Average Game Score:  18.83   4.30
+Homefield:            1.89
+St. Dev.:            13.35
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Texas A&M        11  0  0  19.27   2.82     2     1    37    25.25   0.682
+ 2 USC               8  0  2  18.10   3.30     4     2    11    23.15   0.618
+ 3 Cornell           8  0  0  24.62   6.50     1    28    38    22.76   0.605
+ 4 Georgia Tech      8  2  0  15.00   5.60     8     6     8    19.02   0.486
+ 5 Tulane            8  1  1  19.40   6.00     3    23    14    18.99   0.485
+ 6 Duke              8  1  0  20.33   4.67     6     8    56    18.98   0.484
+ 7 Clemson           9  1  0  16.50   4.50    16     4    66    17.75   0.445
+ 8 Tennessee        10  1  0  19.27   1.27    21     5    68    16.90   0.417
+ 9 UCLA              6  0  4  12.70   6.20    20     7    43    16.47   0.404
+10 Santa Clara       5  1  3  13.00   4.44    31     3    25    15.55   0.375
+
+1940
+Teams Rated:           121
+Average Game Score:  21.54   5.73
+Homefield:            2.73
+St. Dev.:            12.96
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Minnesota         8  0  0  19.25   8.88     3     2     2    29.20   0.679
+ 2 Mississippi St   10  0  1  22.45   5.27     8     1    14    26.80   0.604
+ 3 Boston College   11  0  0  30.82   5.91     1     7    49    26.76   0.603
+ 4 Michigan          7  1  0  24.50   4.25     5     5    17    26.26   0.586
+ 5 Stanford         10  0  0  19.60   8.50     4     6    35    25.22   0.553
+ 6 Texas A&M         9  1  0  18.30   4.60    10     3    16    23.14   0.484
+ 7 SMU               8  1  1  14.20   7.50    16     4    15    20.28   0.391
+ 8 Tennessee        10  1  0  30.18   4.09     6    16    31    20.09   0.385
+ 9 Northwestern      6  2  0  21.25   8.00     7    15     9    19.70   0.372
+10 Texas             8  2  0  17.20   7.70    11    10    21    18.72   0.342
+
+1941
+Teams Rated:           119
+Average Game Score:  23.16   5.31
+Homefield:            1.17
+St. Dev.:            14.24
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Duquesne          8  0  0  17.88   2.62     4     2    44    33.84   0.736
+ 2 Minnesota         8  0  0  23.25   4.75     5     4    41    29.26   0.609
+ 3 Mississippi St    8  1  1  19.10   5.50    28     1     4    26.63   0.530
+ 4 Notre Dame        8  0  1  21.00   7.11     6    11    49    26.20   0.517
+ 5 Alabama           9  2  0  23.91   7.73     8     8     5    26.09   0.514
+ 6 Georgia           9  1  1  29.00   7.73     3    26    28    23.63   0.440
+ 7 Texas             8  1  1  33.80   5.50     1    36    38    23.50   0.436
+ 8 Oregon St         8  2  0  14.30   4.90    23     3    30    23.21   0.427
+ 9 Michigan          6  1  1  18.38   5.12    17     6    22    22.32   0.401
+10 Navy              7  1  1  21.33   3.78    16     7    34    21.97   0.390
+
+1942
+Teams Rated:           121
+Average Game Score:  23.33   5.17
+Homefield:            1.90
+St. Dev.:            15.77
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Ga Pre-Flight     7  1  1  20.33  11.67     2    11     2    29.84   0.640
+ 2 Tennessee         9  1  1  23.55   5.55     7     1    36    27.52   0.578
+ 3 Georgia          11  1  0  31.33   6.33     4    15    26    27.37   0.574
+ 4 Ohio St           9  1  0  33.70  11.40     1    31    28    26.61   0.553
+ 5 Wisconsin         8  1  1  14.90   6.80    17     2    12    24.55   0.496
+ 6 Louisiana St      7  3  0  19.20  11.70     6    14     4    23.11   0.456
+ 7 Alabama           8  3  0  22.36   8.82     9     9     7    22.78   0.447
+ 8 Texas             9  2  0  22.18   4.45    15     5    38    22.36   0.436
+ 9 Georgia Tech      9  2  0  19.91   7.91    10     8    13    21.86   0.422
+10 Mississippi St    8  2  0  20.00   7.70    11    10    33    20.99   0.398
+
+1943
+Teams Rated:            76
+Average Game Score:  26.81   5.86
+Homefield:            0.85
+St. Dev.:            14.83
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 March Field       9  1  0  29.20   6.50     1     1     3    60.21   0.942
+ 2 USC               8  2  0  15.50   5.80     5     2     7    43.87   0.659
+ 3 Pacific           7  2  0  16.22   7.33     8     3     4    40.80   0.583
+ 4 Notre Dame        9  1  0  34.00   6.90     3     7    10    39.28   0.544
+ 5 D Monte P.Flight  7  1  0  31.50   8.12     2    14     9    38.37   0.520
+ 6 Purdue            9  0  0  23.78   6.11     9     4    24    34.29   0.412
+ 7 Navy              8  1  0  26.33   8.89     7     9    26    31.91   0.351
+ 8 Michigan          8  1  0  33.56   8.11     4    13    18    31.83   0.349
+ 9 Duke              8  1  0  37.22   3.78     6    10    35    31.15   0.332
+10 G Lakes Navy     10  2  0  21.42   9.00    12     6    19    30.25   0.309
+
+1944
+Teams Rated:            95
+Average Game Score:  28.20   5.84
+Homefield:            1.78
+St. Dev.:            15.09
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Army              9  0  0  56.00   3.89     1    14    56    46.70   0.716
+ 2 Norman NAS        6  0  0  24.17   6.67     5     1    16    46.52   0.710
+ 3 Randolph Field   12  0  0  42.33   1.58     2     5    20    45.50   0.688
+ 4 Ohio St           9  0  0  31.89   8.78     3     3    13    45.37   0.685
+ 5 Iowa Pre-Flight  10  1  0  28.45   8.73     7     6    14    36.42   0.451
+ 6 Michigan          8  2  0  20.40   9.10    11     4     7    35.13   0.417
+ 7 Oklahoma St       8  1  0  25.33  11.44     6    11    27    34.43   0.399
+ 8 Notre Dame        8  2  0  27.20  11.80     8    10    17    32.49   0.349
+ 9 Navy              6  3  0  26.22   9.78    12     7    19    32.06   0.338
+10 March Field       7  1  2  21.90   7.40    25     2    10    28.09   0.247
+
+1945
+Teams Rated:           101
+Average Game Score:  26.75   5.96
+Homefield:            4.65
+St. Dev.:            15.76
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Army              9  0  0  45.78   5.11     1     4     2    52.23   0.895
+ 2 Navy              7  1  1  24.44   7.22     4     1     4    38.05   0.617
+ 3 Alabama          10  0  0  43.00   8.00     2    20    26    38.00   0.616
+ 4 Indiana           9  0  1  27.90   5.60     3     3    21    35.98   0.566
+ 5 Michigan          7  3  0  18.70   9.90    11     2     1    33.20   0.495
+ 6 Duke              6  2  0  28.62  14.25     6     8     3    29.72   0.407
+ 7 Notre Dame        7  2  1  25.50  12.20     7    11    16    28.28   0.371
+ 8 G Lakes Navy      6  3  1  22.10  12.90    10     6     8    27.96   0.363
+ 9 Georgia           9  2  0  28.55   9.09     9     9    19    27.71   0.357
+10 Tennessee         8  1  0  26.44   5.78    13     5    36    25.93   0.314
+
+1946
+Teams Rated:           120
+Average Game Score:  25.46   6.80
+Homefield:            1.03
+St. Dev.:            15.11
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Notre Dame        8  0  1  30.11   2.67     1     1     9    40.60   0.755
+ 2 Army              9  0  1  26.30   8.00     3     2    15    37.20   0.674
+ 3 Illinois          8  2  0  21.70  10.50     5     3     4    36.45   0.655
+ 4 Georgia          11  0  0  35.64  10.00     2     8    63    34.26   0.598
+ 5 Michigan          6  2  1  25.89   8.11     4     9     3    32.38   0.548
+ 6 Indiana           6  3  0  14.33  10.56    13     4     8    28.33   0.438
+ 7 Louisiana St      9  1  1  21.82  11.18     8    17    25    25.30   0.359
+ 8 Rice              9  2  0  22.27   5.64    16    10    26    25.13   0.354
+ 9 Tennessee         9  2  0  15.91   8.82    24     5    16    23.53   0.314
+10 Georgia Tech      9  2  0  25.82  11.55     7    24    39    23.18   0.305
+
+1947
+Teams Rated:           120
+Average Game Score:  25.39   7.01
+Homefield:            1.87
+St. Dev.:            14.52
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Texas            10  1  0  26.55   6.73     3     2     6    36.45   0.715
+ 2 Michigan         10  0  0  39.40   5.30     1    14    33    35.47   0.690
+ 3 Notre Dame        9  0  0  32.33   5.78     2     8    32    33.90   0.648
+ 4 SMU               9  0  2  16.55   8.18     8     1    19    30.70   0.558
+ 5 Pennsylvania      7  0  1  27.38   4.38     9     3    27    27.33   0.460
+ 6 North Carolina    8  2  0  21.00   9.30     6    10    15    26.30   0.431
+ 7 Rice              6  3  1  20.20   7.40    11     6     4    24.80   0.388
+ 8 Mississippi       9  2  0  24.45  10.00     4    24    24    24.59   0.382
+ 9 Alabama           8  3  0  19.09   9.18    12     7    22    24.21   0.371
+10 Penn St           9  0  1  33.20   4.00     5    19    84    23.69   0.357
+
+1948
+Teams Rated:           117
+Average Game Score:  26.78   8.20
+Homefield:            0.72
+St. Dev.:            15.28
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Michigan          9  0  0  28.00   4.89     1     1     9    37.45   0.759
+ 2 Notre Dame        9  0  1  32.00   9.30     2    15    34    29.46   0.551
+ 3 Oklahoma         10  1  0  31.82  11.00     3    20    60    28.41   0.522
+ 4 Northwestern      8  2  0  19.10   9.10    18     2    15    28.16   0.515
+ 5 Tulane            9  1  0  20.70   6.00    10     3    33    27.16   0.487
+ 6 Mississippi       8  1  0  25.11  10.33     4    18    26    27.06   0.484
+ 7 SMU               9  1  1  22.73   9.55     9     5    10    26.92   0.480
+ 8 Army              8  0  1  32.67   9.89     5    29    43    24.29   0.406
+ 9 North Carolina    9  1  1  23.73   8.55    20     4    16    24.21   0.404
+10 Clemson          11  0  0  24.91   6.91    17     6    80    23.72   0.391
+
+1949
+Teams Rated:           119
+Average Game Score:  30.09   9.97
+Homefield:            0.68
+St. Dev.:            16.08
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Notre Dame       10  0  0  36.00   8.60     2     3    18    40.53   0.691
+ 2 Oklahoma         11  0  0  36.27   8.00     1    10    40    37.28   0.610
+ 3 Ohio St           7  1  2  20.70  13.60     5     2     3    37.07   0.605
+ 4 California       10  1  0  29.00  11.91     3     7    15    35.98   0.577
+ 5 Michigan          6  2  1  15.00   9.44    18     1     2    32.20   0.476
+ 6 Minnesota         7  2  0  25.67   8.89     6     6     7    32.17   0.476
+ 7 Rice             10  1  0  25.09   8.82     9     5    32    32.04   0.472
+ 8 Army              9  0  0  39.33   7.56     4    13    80    30.80   0.440
+ 9 Santa Clara       8  2  1  20.18  10.36    21     4    11    27.72   0.360
+10 USC               5  3  1  23.78  18.89    11    15     5    24.96   0.293
+
+1950
+Teams Rated:           120
+Average Game Score:  28.80   9.70
+Homefield:            3.25
+St. Dev.:            15.85
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Tennessee        11  1  0  27.92   5.92    13     1     8    31.98   0.696
+ 2 Kentucky         11  1  0  32.75   5.75     8     3    11    29.23   0.627
+ 3 Princeton         9  0  0  38.78  10.44     1    15    63    28.64   0.612
+ 4 Texas             9  2  0  22.91  13.45    11     7    14    24.38   0.497
+ 5 Illinois          7  2  0  15.22   6.22    41     2     2    23.18   0.465
+ 6 Clemson           9  0  1  34.40   7.60     4    14    85    23.04   0.461
+ 7 Michigan          6  3  1  15.00  11.40    20     5     3    22.57   0.448
+ 8 Oklahoma         10  1  0  32.00  13.45     5    17    49    22.16   0.437
+ 9 Army              8  1  0  29.67   4.44    21     8    53    20.53   0.394
+10 Cornell           7  2  0  18.89   9.44    34     4    26    19.39   0.364
+
+1951
+Teams Rated:           116
+Average Game Score:  28.52  10.15
+Homefield:            1.93
+St. Dev.:            16.12
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Maryland         10  0  0  38.10   7.50     1     5    51    37.58   0.734
+ 2 Illinois          9  0  1  22.00   8.30     4     1    16    34.69   0.667
+ 3 Georgia Tech     11  0  1  24.58   7.50     5     2    32    32.04   0.602
+ 4 Michigan St       9  0  0  30.00  12.67     2    14    39    31.97   0.600
+ 5 Tennessee        10  1  0  35.09  10.55     3     9    13    30.37   0.560
+ 6 Wisconsin         7  1  1  21.78   5.89    16     3    24    27.31   0.481
+ 7 Kentucky          8  4  0  26.17  10.08    19     8    11    22.59   0.362
+ 8 Baylor            8  2  1  22.27  11.91    14    15    25    22.38   0.357
+ 9 Stanford          9  2  0  20.82  16.45    13    19    37    21.22   0.329
+10 California        8  2  0  30.70  16.60     6    31    42    20.37   0.308
+
+1952
+Teams Rated:           113
+Average Game Score:  27.09   9.52
+Homefield:            0.61
+St. Dev.:            15.08
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Georgia Tech     12  0  0  27.08   4.92     3     2    20    40.52   0.748
+ 2 Michigan St       9  0  0  34.67   9.33     2     6    30    39.37   0.721
+ 3 Notre Dame        7  2  1  18.30  10.80    11     3     2    33.21   0.560
+ 4 USC              10  1  0  23.09   4.27    17     1    16    31.38   0.509
+ 5 Alabama          10  2  0  27.08  11.58     6     9    12    30.41   0.482
+ 6 UCLA              8  1  0  24.44   6.11    10     7    31    28.88   0.439
+ 7 Texas             9  2  0  25.27  14.91     5    13    13    28.44   0.427
+ 8 Mississippi       8  1  2  22.18  10.91    14     4    11    27.94   0.414
+ 9 Oklahoma          8  1  1  40.70  14.10     1    48    45    27.41   0.399
+10 Tennessee         8  2  1  23.55   7.18    24     5     5    23.67   0.301
+
+1953
+Teams Rated:           110
+Average Game Score:  25.36   9.18
+Homefield:            1.82
+St. Dev.:            14.46
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Michigan St       9  1  0  24.00  11.00     3     8     8    30.93   0.664
+ 2 Notre Dame        9  0  1  31.70  13.90     1    24    16    30.54   0.653
+ 3 Oklahoma          9  1  1  26.64   8.18     6     2    33    28.12   0.584
+ 4 Illinois          7  1  1  25.33  14.78     4    10    12    26.38   0.532
+ 5 Wisconsin         6  2  1  19.89  12.22     7     7     2    24.87   0.487
+ 6 Rice              9  2  0  26.82   9.55     5    19    20    23.77   0.454
+ 7 Texas Tech       11  1  0  38.58  13.92     2    42    60    22.59   0.419
+ 8 Iowa              5  3  1  20.78  10.11    18     1     5    22.41   0.414
+ 9 Maryland         10  1  0  27.09   3.45    16     3    50    21.99   0.402
+10 UCLA              8  2  0  22.40   7.60    12     5    22    21.63   0.391
+
+1954
+Teams Rated:           111
+Average Game Score:  25.87   8.87
+Homefield:            1.36
+St. Dev.:            15.17
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Ohio St          10  0  0  24.90   7.50     1     1    11    36.08   0.778
+ 2 Notre Dame        9  1  0  26.10  11.50     2     3    14    30.43   0.639
+ 3 UCLA              9  0  0  40.78   4.44     3     9    57    27.45   0.558
+ 4 Wisconsin         7  2  0  22.22  10.89    10     2     8    25.21   0.495
+ 5 Miami (Florida)   8  1  0  28.56  10.44     6     8    41    24.24   0.468
+ 6 Navy              8  2  0  30.40   7.30    11     6    49    23.62   0.451
+ 7 Oklahoma         10  0  0  30.40   6.20     7    10    52    23.48   0.447
+ 8 Georgia Tech      8  3  0  17.18   8.82    17     5    13    21.82   0.401
+ 9 Auburn            8  3  0  25.09   7.82     9    17    15    21.30   0.387
+10 Iowa              5  4  0  21.33  15.67     8    20     4    20.91   0.376
+
+1955
+Teams Rated:           110
+Average Game Score:  24.48   7.62
+Homefield:            1.77
+St. Dev.:            14.49
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Mississippi      10  1  0  24.09  10.00     3     2     5    31.00   0.676
+ 2 Oklahoma         11  0  0  35.00   5.45     1     7    52    30.82   0.671
+ 3 Michigan St       9  1  0  25.30   8.30     2     4    17    30.08   0.650
+ 4 Georgia Tech      9  1  1  17.18   4.18    17     1    26    25.11   0.507
+ 5 UCLA              9  2  0  27.18   6.73     5     6    13    23.94   0.473
+ 6 Texas Christian   9  2  0  27.82   9.55     4    18    24    23.69   0.466
+ 7 Maryland         10  1  0  19.73   7.00    14     3    42    22.90   0.442
+ 8 Vanderbilt        8  3  0  21.82   7.82     8    10    30    21.14   0.392
+ 9 Ohio St           7  2  0  22.33  10.78    10    12    31    20.14   0.363
+10 Texas A&M         7  2  1  16.00   8.90    23     5     7    20.01   0.360
+
+1956
+Teams Rated:           111
+Average Game Score:  24.76   8.64
+Homefield:            0.13
+St. Dev.:            14.41
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Iowa              9  1  0  21.90   8.40     3     3     7    30.36   0.642
+ 2 Georgia Tech     10  1  0  22.55   4.27     4     2    14    29.69   0.623
+ 3 Texas A&M         9  0  1  22.30   8.10     5     5    39    28.32   0.583
+ 4 Tennessee        10  1  0  25.00   8.00     6     6    19    27.48   0.558
+ 5 Michigan          7  2  0  25.89  13.67     2    18     2    26.84   0.539
+ 6 Minnesota         6  1  2  14.11   9.67    16     1     1    25.87   0.510
+ 7 Baylor            9  2  0  18.36   6.64    11     4    36    25.09   0.487
+ 8 Miami (Florida)   8  1  1  16.10   5.30    18     7    44    20.90   0.365
+ 9 Oklahoma         10  0  0  46.60   5.10     1    58    66    20.46   0.352
+10 Pittsburgh        7  3  1  14.18  10.82    20    10    11    20.01   0.340
+
+1957
+Teams Rated:           112
+Average Game Score:  23.41   7.91
+Homefield:            0.37
+St. Dev.:            14.21
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Auburn           10  0  0  20.70   2.80     5     1    21    29.99   0.718
+ 2 Ohio St           9  1  0  26.70   9.20     3     8    30    24.53   0.561
+ 3 Michigan St       8  1  0  29.33   8.33     2    12    38    23.26   0.523
+ 4 Mississippi       9  1  1  24.64   5.36     8     4    25    23.07   0.517
+ 5 Navy              9  1  1  25.55   6.45     7     6    41    22.99   0.514
+ 6 Iowa              7  1  1  29.22  12.44     4    13    43    21.84   0.479
+ 7 Mississippi St    6  2  1  19.44  11.11    10    10     2    20.54   0.440
+ 8 Oklahoma         10  1  0  30.27   8.09     1    27    50    20.28   0.432
+ 9 Tennessee         8  3  0  14.91   6.82    16     2     3    20.07   0.426
+10 Florida           6  2  1  14.78   7.78    19     5    14    18.87   0.390
+
+1958
+Teams Rated:           112
+Average Game Score:  23.52   8.32
+Homefield:            1.31
+St. Dev.:            15.30
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Louisiana St     11  0  0  25.64   4.82     2     4    29    27.89   0.624
+ 2 Iowa              8  1  1  27.20  14.60     1    20     3    26.55   0.587
+ 3 Wisconsin         7  1  1  22.33   8.56     8     3    17    23.90   0.512
+ 4 Ohio St           6  1  2  20.22  14.67     3    12     5    23.80   0.509
+ 5 Purdue            6  1  2  20.44  11.33     5     7     7    23.42   0.498
+ 6 Oklahoma         10  1  0  27.27   5.00     6     8    45    23.26   0.493
+ 7 Auburn            9  0  1  17.30   6.20    12     2    31    23.23   0.493
+ 8 Army              8  0  1  29.33   5.44     7     5    60    22.76   0.479
+ 9 Air Force         9  0  2  22.45   9.27    10     9    52    20.57   0.417
+10 Texas Christian   8  2  1  19.82   7.09    23     1    23    19.58   0.389
+
+1959
+Teams Rated:           112
+Average Game Score:  23.65   8.16
+Homefield:            2.43
+St. Dev.:            14.37
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Mississippi      10  1  0  31.82   1.91     2     3     5    33.15   0.769
+ 2 Syracuse         11  0  0  37.55   6.64     1    14    50    30.64   0.707
+ 3 Georgia          10  1  0  20.73   8.09     3     8    29    25.21   0.557
+ 4 Louisiana St      9  2  0  14.91   4.55    16     1     3    24.93   0.549
+ 5 Arkansas          9  2  0  14.82   9.18     9     4    25    22.11   0.467
+ 6 Penn St           9  2  0  23.82  10.18     4    16    42    20.26   0.414
+ 7 Washington       10  1  0  23.00   6.64     7    11    62    20.05   0.408
+ 8 Texas             9  2  0  19.64   8.73    10     9    18    19.52   0.392
+ 9 Texas Christian   8  3  0  15.36   6.82    19     5    12    19.44   0.390
+10 Auburn            7  3  0  17.40   5.80    24     6    13    17.87   0.346
+
+1960
+Teams Rated:           113
+Average Game Score:  23.35   7.74
+Homefield:            1.27
+St. Dev.:            12.82
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Iowa              8  1  0  26.00  12.00     1     3     1    30.37   0.735
+ 2 Mississippi      10  0  1  25.45   6.36     4     5    35    25.40   0.579
+ 3 Ohio St           7  2  0  23.22  10.00     6     9    14    23.85   0.528
+ 4 Missouri         10  1  0  26.82   8.45     2    18    40    23.41   0.513
+ 5 Washington       10  1  0  24.73   9.73     8     8    55    23.29   0.509
+ 6 Minnesota         8  2  0  22.80   8.80    11     6    11    21.80   0.459
+ 7 Michigan St       6  2  1  21.44  13.11     5    22     7    21.65   0.454
+ 8 Kansas            7  2  1  21.90   8.90    10    13    19    21.61   0.452
+ 9 Florida           9  2  0  14.27   7.82    17     2    30    19.97   0.398
+10 Auburn            8  2  0  15.50   8.00    12    12    18    19.24   0.374
+
+1961
+Teams Rated:           111
+Average Game Score:  23.95   8.14
+Homefield:            2.69
+St. Dev.:            15.08
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Alabama          11  0  0  27.00   2.27     3     1    40    31.91   0.719
+ 2 Ohio St           8  0  1  24.56   9.22     2     8    36    28.00   0.618
+ 3 Louisiana St     10  1  0  23.55   5.18     4     5    19    27.66   0.609
+ 4 Texas            10  1  0  27.55   6.00     6     3    28    27.01   0.591
+ 5 Minnesota         8  2  0  16.10   7.80    14     2    11    23.50   0.493
+ 6 Mississippi       9  2  0  30.27   4.73     7    12    14    23.04   0.480
+ 7 Michigan St       7  2  0  21.33   5.56    18     7    25    20.68   0.414
+ 8 Arkansas          8  3  0  16.64   8.82    22     4     6    20.65   0.413
+ 9 Michigan          6  3  0  23.56  18.11     1    37     8    18.49   0.355
+10 Purdue            6  3  0  16.22   9.67    27     9    13    16.73   0.309
+
+1962
+Teams Rated:           120
+Average Game Score:  23.89   8.82
+Homefield:            1.79
+St. Dev.:            13.69
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 USC              11  0  0  23.73   8.36     2     7    24    31.98   0.705
+ 2 Mississippi      10  0  0  24.70   5.30     5     3    45    30.30   0.658
+ 3 Louisiana St      9  1  1  15.91   3.09    17     1    19    28.23   0.596
+ 4 Alabama          10  1  0  26.27   3.55    10     5    43    26.93   0.556
+ 5 Wisconsin         8  2  0  32.20  13.00     1    24     9    25.72   0.519
+ 6 Northwestern      7  2  0  26.33  17.56     3    22     7    22.63   0.423
+ 7 Minnesota         6  2  1  14.56   6.78    36     2     5    22.00   0.404
+ 8 Missouri          8  1  2  18.55   5.64    35     4    32    21.50   0.389
+ 9 Oklahoma          8  3  0  24.27   5.55    15     8    15    21.11   0.377
+10 Texas             9  1  1  16.73   6.55    32     6    41    21.00   0.374
+
+1963
+Teams Rated:           120
+Average Game Score:  23.14   8.43
+Homefield:            1.56
+St. Dev.:            14.23
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Texas            11  0  0  22.09   6.45     5     1    32    29.97   0.720
+ 2 Nebraska         10  1  0  24.82  10.36     4     5    44    24.69   0.569
+ 3 Illinois          8  1  1  17.00   9.60     7     3    17    23.52   0.533
+ 4 Alabama           9  2  0  20.64   8.64     6     8    26    22.99   0.517
+ 5 Pittsburgh        9  1  0  23.60  13.00     2    21    33    22.27   0.495
+ 6 Auburn            9  2  0  17.82  10.55     8     4     5    21.94   0.485
+ 7 Michigan St       6  2  1  16.44   7.00    27     2     6    20.32   0.436
+ 8 Mississippi St    7  2  2  16.82   8.55    14     6     7    19.95   0.425
+ 9 Navy              9  2  0  29.09  15.00     1    44    42    19.92   0.424
+10 Mississippi       7  1  2  21.40   4.50    18     9    30    19.00   0.397
+
+1964
+Teams Rated:           120
+Average Game Score:  21.97   8.03
+Homefield:            2.54
+St. Dev.:            14.46
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Michigan          9  1  0  23.50   8.30     1     6    11    25.22   0.658
+ 2 Arkansas         11  0  0  21.00   5.82     7     1    48    24.66   0.642
+ 3 Texas            10  1  0  20.00   7.36     4     3    40    23.58   0.611
+ 4 Alabama          10  1  0  22.82   8.00     2    21    18    21.18   0.541
+ 5 Notre Dame        9  1  0  28.70   7.70     3    13    24    20.38   0.517
+ 6 Florida St        9  1  1  23.91   7.73     8    14    50    18.46   0.460
+ 7 Princeton         9  0  0  24.00   5.89    13    12    83    16.60   0.406
+ 8 Illinois          6  3  0  15.78  11.11    23     7     6    16.14   0.392
+ 9 USC               7  3  0  20.70  13.00     6    28    15    16.03   0.389
+10 Ohio St           7  2  0  16.22   8.44    37     2    26    15.81   0.383
+
+1965
+Teams Rated:           120
+Average Game Score:  24.41   9.15
+Homefield:            1.93
+St. Dev.:            14.79
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Alabama           9  1  1  23.27   9.73     3     4     9    28.56   0.669
+ 2 Michigan St      10  1  0  23.91   6.91     8     1     6    28.34   0.663
+ 3 UCLA              8  2  1  23.36  15.27     1    11     1    27.03   0.627
+ 4 Tennessee         8  1  2  20.00   8.91     7     2     8    26.31   0.607
+ 5 Louisiana St      8  3  0  24.09  14.91     5    13    15    20.44   0.440
+ 6 Notre Dame        7  2  1  27.00   7.30    16     7    17    19.67   0.417
+ 7 Dartmouth         9  0  0  30.11   7.89    14     9    86    19.39   0.410
+ 8 Mississippi       7  4  0  16.27  10.45    34     3     7    18.81   0.393
+ 9 Arkansas         10  1  0  30.09  10.73     9    16    44    18.63   0.388
+10 USC               7  2  1  26.20   9.20    17    10    24    18.49   0.384
+
+1966
+Teams Rated:           119
+Average Game Score:  25.07   9.68
+Homefield:            1.67
+St. Dev.:            14.18
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Georgia          10  1  0  21.36   8.91     6     1    33    29.42   0.665
+ 2 Alabama          11  0  0  27.36   4.00     3     4    36    29.15   0.657
+ 3 Notre Dame        9  0  1  36.20   3.80     1     7    30    28.82   0.648
+ 4 Michigan St       9  0  1  29.30   9.90     5     5    34    26.44   0.579
+ 5 Florida           9  2  0  24.09  13.36     4    17    13    22.61   0.465
+ 6 Miami (Florida)   8  2  1  19.09   9.36    19     3    14    22.35   0.457
+ 7 Purdue            9  2  0  27.00  14.00     7    18    25    21.04   0.418
+ 8 Wyoming          10  1  0  32.27   8.09     8    16    67    20.50   0.402
+ 9 Mississippi       8  3  0  15.45   5.91    33     2     5    19.59   0.376
+10 UCLA              9  1  0  28.10  12.70     9    22    56    18.07   0.333
+
+1967
+Teams Rated:           118
+Average Game Score:  26.39  10.53
+Homefield:           -0.36
+St. Dev.:            15.34
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Oklahoma         10  1  0  26.36   8.36     2     6    50    25.57   0.652
+ 2 USC              10  1  0  23.45   7.91    15     1    21    24.30   0.617
+ 3 Tennessee         9  2  0  25.73  12.82     7    11    12    21.69   0.544
+ 4 Florida St        7  2  2  22.73  17.00     8    19     2    19.65   0.486
+ 5 Louisiana St      7  3  1  24.36  11.55    11    15     6    18.74   0.460
+ 6 Texas-El Paso     7  2  1  33.70  14.50     9    20    39    18.72   0.460
+ 7 Penn St           8  2  1  27.18  14.36    10    17    51    18.69   0.459
+ 8 Purdue            8  2  0  29.10  15.40     3    37    19    18.16   0.444
+ 9 Colorado          9  2  0  22.27  10.27    13    14    55    18.09   0.442
+10 Alabama           8  2  1  18.55  11.91    24     5     5    17.87   0.436
+
+1968
+Teams Rated:           119
+Average Game Score:  29.84  12.81
+Homefield:            1.85
+St. Dev.:            16.00
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Ohio St          10  0  0  32.30  15.00     1     1    31    38.63   0.759
+ 2 Texas             9  1  1  34.45  18.00     2     9    10    33.12   0.628
+ 3 Arkansas         10  1  0  31.82  17.18     3     4    33    33.04   0.626
+ 4 Penn St          11  0  0  32.18  10.91    10     3    59    29.24   0.527
+ 5 SMU               8  3  0  28.27  24.82     4    22     3    26.55   0.456
+ 6 Georgia           8  1  2  25.82  10.36    22     2    11    25.69   0.433
+ 7 USC               9  1  1  23.55  15.27    16     6    25    25.45   0.427
+ 8 Kansas            9  2  0  35.82  17.27     6    21    36    24.51   0.403
+ 9 Purdue            8  2  0  29.10  16.70    15    10    27    23.42   0.375
+10 Oklahoma          7  4  0  31.18  20.45     7    26     6    23.09   0.366
+
+1969
+Teams Rated:           122
+Average Game Score:  30.90  12.43
+Homefield:            3.77
+St. Dev.:            16.48
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Penn St          11  0  0  29.27   8.18    18     1    46    37.75   0.705
+ 2 USC              10  0  1  23.73  11.64    12     2    16    36.44   0.674
+ 3 Texas            11  0  0  39.55  10.82     3     7    72    31.67   0.555
+ 4 Nebraska          9  2  0  23.09  10.82    21     3     7    31.03   0.539
+ 5 Missouri          9  2  0  33.18  17.36     5    13     5    29.26   0.493
+ 6 Houston           9  2  0  38.36  18.91     2    22    34    28.01   0.460
+ 7 UCLA              8  1  1  32.90  10.30    19     5    40    25.85   0.405
+ 8 Mississippi       8  3  0  30.36  14.73    14    12    10    25.45   0.395
+ 9 Colorado          8  3  0  25.09  20.64    10    16     9    25.24   0.390
+10 Florida           9  1  1  31.18  18.18    13    14    32    25.02   0.384
+
+1970
+Teams Rated:           123
+Average Game Score:  30.25  12.36
+Homefield:            2.33
+St. Dev.:            16.06
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Nebraska         11  0  1  35.50  15.75     1     5    24    37.60   0.726
+ 2 Notre Dame       10  1  0  32.18   9.82     6     1    29    34.34   0.647
+ 3 Tennessee        11  1  0  30.83   9.67     9     3    44    31.83   0.582
+ 4 Texas            10  1  0  38.45  13.55     2    13    18    29.88   0.531
+ 5 Louisiana St      9  3  0  24.08   9.42    21     2    23    26.55   0.442
+ 6 Stanford          9  3  0  28.58  17.17    11     8     8    26.22   0.433
+ 7 Ohio St           9  1  0  29.00  12.00    14     6    35    25.79   0.422
+ 8 Arizona St       11  0  0  36.82  13.45     4    15    71    25.61   0.417
+ 9 Auburn            9  2  0  35.45  16.09     3    26    26    25.58   0.417
+10 Michigan          9  1  0  28.80   9.00    17     7    46    24.26   0.382
+
+1971
+Teams Rated:           128
+Average Game Score:  28.63  11.80
+Homefield:            1.60
+St. Dev.:            15.24
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Nebraska         13  0  0  39.00   8.00     2     1    12    48.92   0.886
+ 2 Oklahoma         11  1  0  44.50  18.08     1    12     6    39.50   0.712
+ 3 Alabama          11  1  0  30.67  10.17     5     2     3    38.01   0.678
+ 4 Colorado         10  2  0  30.83  18.33     3     6     4    32.90   0.553
+ 5 Auburn            9  2  0  30.45  16.55     7     9    14    27.85   0.424
+ 6 Georgia          11  1  0  30.00   9.58    13     4    26    26.40   0.387
+ 7 Tennessee        10  2  0  22.50  10.08    19     3    23    25.81   0.372
+ 8 Louisiana St      9  3  0  29.42  12.75    11     7    16    25.36   0.361
+ 9 Mississippi      10  2  0  30.25  18.50     6    17    24    24.11   0.331
+10 Penn St          11  1  0  40.33  11.42     8    20    64    22.65   0.296
+
+1972
+Teams Rated:           127
+Average Game Score:  29.02  12.09
+Homefield:            3.11
+St. Dev.:            15.54
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 USC              12  0  0  38.92  11.17     1     6    18    37.33   0.714
+ 2 Oklahoma         11  1  0  33.25   6.17     8     1    12    34.33   0.639
+ 3 Auburn           10  1  0  19.00  12.82     9     2    11    33.01   0.604
+ 4 Texas            10  1  0  24.64  11.00    10     3     9    31.41   0.561
+ 5 Tennessee        10  2  0  24.75   8.33    14     4    20    28.93   0.494
+ 6 Alabama          10  2  0  33.83  12.50     3    14    25    28.24   0.475
+ 7 Nebraska          9  2  1  41.75   8.08     4    10    16    27.46   0.453
+ 8 Michigan         10  1  0  24.00   5.18    25     5    43    24.79   0.382
+ 9 North Carolina   11  1  0  27.00  17.50     5    24    58    23.49   0.348
+10 Ohio St           9  2  0  25.45  15.55    12    13    30    22.75   0.329
+
+1973
+Teams Rated:           129
+Average Game Score:  29.69  11.96
+Homefield:            3.62
+St. Dev.:            15.95
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Oklahoma         10  0  1  36.36  12.09     1     5     5    40.33   0.736
+ 2 Notre Dame       11  0  0  34.73   8.09     3     4    35    35.80   0.626
+ 3 Ohio St          10  0  1  37.55   5.82     4     6    42    34.08   0.582
+ 4 Penn St          12  0  0  37.25  10.75     2     9    55    33.08   0.556
+ 5 Nebraska          9  2  1  25.50  13.58    16     2     1    30.99   0.500
+ 6 Alabama          11  1  0  39.75   9.42     5    13    22    30.83   0.496
+ 7 Michigan         10  0  1  30.00   6.18    13     3    50    29.38   0.458
+ 8 Miami (Ohio)     10  0  0  19.20   6.80    36     1    81    26.29   0.377
+ 9 Texas Tech       11  1  0  28.50  15.58    10    12    45    26.17   0.374
+10 NC State          9  3  0  33.00  20.92     6    35    31    22.93   0.294
+
+1974
+Teams Rated:           129
+Average Game Score:  28.34  11.68
+Homefield:            3.36
+St. Dev.:            16.35
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Oklahoma         11  0  0  43.00   8.36     1     8    18    35.56   0.754
+ 2 Alabama          11  1  0  27.42   8.00     8     4    28    27.23   0.550
+ 3 USC              10  1  1  30.25  11.83     2     9    34    27.10   0.547
+ 4 Michigan         10  1  0  29.45   6.82    16     1    31    26.33   0.526
+ 5 Auburn           10  2  0  23.92  10.17    22     3    45    24.20   0.470
+ 6 Ohio St          10  2  0  36.42  10.75     4    13    35    23.64   0.456
+ 7 Miami (Ohio)      9  0  1  26.90   7.60    32     2    77    22.82   0.434
+ 8 Notre Dame       10  2  0  26.50  12.25     9    10    48    22.70   0.431
+ 9 Nebraska          9  3  0  31.08  11.00    17     5    24    22.22   0.418
+10 Penn St          10  2  0  26.83  11.83     6    17    63    22.05   0.414
+
+1975
+Teams Rated:           137
+Average Game Score:  27.96  11.75
+Homefield:            0.59
+St. Dev.:            15.53
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Oklahoma         11  1  0  28.67  12.83     6     1     4    28.41   0.623
+ 2 Alabama          11  1  0  31.17   6.00     9     3    36    26.88   0.582
+ 3 Arizona St       12  0  0  28.92  10.58    10     4    71    26.51   0.571
+ 4 UCLA              9  2  1  29.08  20.25     1    13    12    25.61   0.547
+ 5 Ohio St          11  1  0  32.00   8.50     8     7    25    24.66   0.520
+ 6 Texas            10  2  0  33.42  15.08     2    22    20    23.34   0.483
+ 7 Arkansas         10  2  0  28.00  10.25    12     6    45    23.21   0.479
+ 8 Nebraska         10  2  0  30.58  11.42     7    11    21    22.27   0.453
+ 9 California        8  3  0  30.00  21.18     3    39    13    20.08   0.393
+10 Colorado          9  3  0  27.58  20.92     5    37    19    18.46   0.349
+
+1976
+Teams Rated:           137
+Average Game Score:  27.90  11.98
+Homefield:            2.02
+St. Dev.:            15.65
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Pittsburgh       12  0  0  31.75  11.08     1     1    65    32.23   0.706
+ 2 USC              11  1  0  32.17  11.58     5     3    48    28.65   0.614
+ 3 Houston          10  2  0  28.58  15.67     2     7    26    26.04   0.543
+ 4 Texas A&M        10  2  0  30.33  11.67    10     5    29    25.10   0.517
+ 5 Ohio St           9  2  1  25.42  12.42    17     4    10    23.06   0.461
+ 6 Georgia          10  2  0  27.25  12.08    12     9    16    23.01   0.460
+ 7 Oklahoma          9  2  1  27.17  16.00     7    13    15    22.38   0.442
+ 8 Michigan         10  2  0  36.00   7.92    14     8    34    22.05   0.433
+ 9 Maryland         11  1  0  24.50   9.58    18     6    53    21.61   0.421
+10 Alabama           9  3  0  27.25  11.67    16    11    41    20.94   0.403
+
+1977
+Teams Rated:           145
+Average Game Score:  29.19  12.03
+Homefield:            2.74
+St. Dev.:            16.07
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Notre Dame       11  1  0  35.00  11.58     1     4    10    34.65   0.686
+ 2 Arkansas         11  1  0  32.42   8.42    14     1    62    30.67   0.585
+ 3 Penn St          11  1  0  32.50  15.58     2     8    19    30.15   0.571
+ 4 Texas            11  1  0  36.75  12.67     4     3    21    30.02   0.568
+ 5 Alabama          11  1  0  31.67  11.58     5     6    44    28.96   0.540
+ 6 Kentucky         10  1  0  22.91  10.09    21     2    39    25.58   0.449
+ 7 Pittsburgh        9  2  1  35.67  11.17    10     7    16    25.44   0.445
+ 8 Oklahoma         10  2  0  33.42  18.08     3    30    33    23.32   0.389
+ 9 Washington        8  4  0  28.67  16.17     8    16    18    23.19   0.386
+10 USC               8  4  0  29.75  17.67     9    15     2    23.03   0.382
+
+1978
+Teams Rated:           138
+Average Game Score:  28.51  12.58
+Homefield:            2.94
+St. Dev.:            15.64
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 USC              12  1  0  24.46  11.77     7     1     1    34.44   0.726
+ 2 Alabama          11  1  0  28.75  14.00     2     2    16    31.56   0.655
+ 3 Oklahoma         11  1  0  39.25  14.58     1    10    23    29.73   0.608
+ 4 Notre Dame        9  3  0  24.42  16.42     5     9     8    25.74   0.500
+ 5 Michigan         10  2  0  31.00   8.75    14     4    28    24.60   0.469
+ 6 Penn St          11  1  0  27.75   9.25    22     3    44    23.05   0.427
+ 7 Arkansas          9  2  1  28.00  12.25    15     6    26    23.04   0.427
+ 8 Houston           9  3  0  30.33  17.75     6    17    12    22.08   0.401
+ 9 Texas             9  3  0  23.92  11.33    20     5    10    22.02   0.399
+10 Stanford          8  4  0  27.17  18.42     9    15    15    21.56   0.387
+
+1979
+Teams Rated:           140
+Average Game Score:  27.76  12.00
+Homefield:            1.73
+St. Dev.:            14.85
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Alabama          12  0  0  31.92   5.58     6     1    67    31.68   0.680
+ 2 USC              11  0  1  32.42  14.25     1    10    17    28.58   0.595
+ 3 Houston          11  1  0  24.58  11.25     7     3    12    27.46   0.563
+ 4 Oklahoma         11  1  0  33.83  12.08     3     9    39    26.63   0.539
+ 5 Pittsburgh       11  1  0  24.25   9.67    19     4    40    25.73   0.513
+ 6 Arkansas         10  2  0  23.67  11.00     8     5     8    25.31   0.500
+ 7 Ohio St          11  1  0  32.50  10.50    12     6    38    23.88   0.459
+ 8 Texas             9  3  0  18.42   8.67    38     2     3    23.02   0.434
+ 9 Nebraska         10  2  0  31.67  10.92    11    12    35    20.67   0.367
+10 Washington        9  3  0  26.75  12.83    24    11    31    20.05   0.350
+
+1980
+Teams Rated:           138
+Average Game Score:  28.85  12.25
+Homefield:            1.56
+St. Dev.:            15.65
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Georgia          12  0  0  27.75  11.42     5     3    59    30.56   0.618
+ 2 Pittsburgh       11  1  0  31.67  10.83     2     9    12    30.45   0.615
+ 3 Florida St       10  2  0  30.75   8.58     6     6     4    27.33   0.529
+ 4 Oklahoma         10  2  0  33.00  17.42     4    12    27    26.85   0.516
+ 5 Penn St          10  2  0  26.75  13.17     9     4    10    26.31   0.501
+ 6 Nebraska         10  2  0  39.17   9.17     3    14    26    25.99   0.492
+ 7 Michigan         10  2  0  26.83  10.75    19     1    52    25.56   0.480
+ 8 Alabama          10  2  0  29.33   8.17    16     5    36    23.62   0.426
+ 9 North Carolina   11  1  0  24.75  10.83    18     7    54    23.34   0.418
+10 Notre Dame        9  2  1  20.67  10.67    29     2     9    22.91   0.406
+
+1981
+Teams Rated:           137
+Average Game Score:  28.72  12.57
+Homefield:            2.41
+St. Dev.:            15.49
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Clemson          12  0  0  28.17   8.75     4     1    33    32.26   0.716
+ 2 Penn St          10  2  0  30.92  13.50     1     9     1    27.56   0.595
+ 3 Pittsburgh       11  1  0  32.08  13.33     3     8     5    27.08   0.582
+ 4 Texas            10  1  1  21.83  13.17    16     2    16    26.01   0.552
+ 5 SMU              10  1  0  33.18  12.45     6     5    52    24.38   0.507
+ 6 Miami (Florida)   9  2  0  22.27  13.18    15     3     7    22.29   0.449
+ 7 Nebraska          9  3  0  30.33  10.42     8    13     4    21.78   0.435
+ 8 Georgia          10  2  0  31.00  10.17     9    14    24    21.02   0.415
+ 9 Alabama           9  2  1  24.67  12.58    14    10    34    20.14   0.391
+10 North Carolina   10  2  0  31.25  12.50    11    18    61    18.88   0.357
+
+1982
+Teams Rated:           113
+Average Game Score:  29.73  13.42
+Homefield:            3.15
+St. Dev.:            15.38
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Penn St          11  1  0  32.92  16.33     1     5    11    27.76   0.681
+ 2 UCLA             10  1  1  33.25  19.25     4    16     9    23.09   0.554
+ 3 Georgia          11  1  0  28.17  13.33    10     2    25    22.79   0.545
+ 4 Nebraska         12  1  0  39.54  12.85     2    20    54    22.50   0.537
+ 5 USC               8  3  0  27.45  13.00    12     4     4    20.92   0.492
+ 6 Fresno St        10  1  0  32.00  18.18     3    26    86    20.07   0.468
+ 7 Washington       10  2  0  29.50  16.08    13     8    16    19.50   0.452
+ 8 Clemson           9  1  1  26.27  13.36    18     3    52    19.14   0.442
+ 9 Arizona St       10  2  0  24.50  12.08    25     1    21    18.23   0.417
+10 SMU              11  0  1  29.50  13.33    17     6    91    18.05   0.412
+
+1983
+Teams Rated:           112
+Average Game Score:  30.01  13.80
+Homefield:            1.48
+St. Dev.:            15.44
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Auburn           11  1  0  25.92  15.50     4     2     1    31.79   0.730
+ 2 Miami (Florida)  11  1  0  26.08  11.33    16     1    15    27.30   0.616
+ 3 Florida           9  2  1  25.33  13.00     7     4     4    26.70   0.601
+ 4 Georgia          10  1  1  22.83  13.17    13     3     5    26.32   0.590
+ 5 Nebraska         12  1  0  50.31  16.69     1    49    31    24.15   0.531
+ 6 Texas            11  1  0  24.08   9.50    21     5    54    20.79   0.439
+ 7 Brigham Young    10  1  0  40.18  19.91     2    38    64    18.97   0.390
+ 8 Clemson           9  1  1  30.73  18.18     8    19    52    18.56   0.379
+ 9 Michigan          9  3  0  29.58  13.33    22     6    19    18.34   0.374
+10 Ohio St           9  3  0  34.17  17.17     5    32    34    17.38   0.348
+
+1984
+Teams Rated:           110
+Average Game Score:  29.47  14.49
+Homefield:            1.57
+St. Dev.:            15.13
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Florida           9  1  1  31.00  15.45     5     3    12    24.58   0.699
+ 2 Boston College   10  2  0  37.42  24.67     1    76     4    20.64   0.592
+ 3 Washington       11  1  0  29.33  12.08     6     9    59    19.67   0.565
+ 4 Maryland          9  3  0  31.67  23.33     2    42    10    18.96   0.545
+ 5 Nebraska         10  2  0  32.25   9.58    20     8    58    16.54   0.476
+ 6 Brigham Young    13  0  0  35.08  14.08     7    22    87    16.43   0.473
+ 7 Virginia          8  2  2  27.08  19.42    10    26    21    14.41   0.415
+ 8 Auburn            9  4  0  27.62  19.54    12    24    24    14.34   0.413
+ 9 Rutgers           7  3  0  21.30  15.50    30     7    13    14.30   0.412
+10 SMU              10  2  0  27.33  16.50    15    21    72    14.22   0.410
+
+1985
+Teams Rated:           110
+Average Game Score:  30.37  14.11
+Homefield:            2.23
+St. Dev.:            15.34
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Oklahoma         11  1  0  30.92   8.58     6     3    40    27.47   0.613
+ 2 Tennessee         9  1  2  27.08  11.67     8     2    11    26.83   0.595
+ 3 Michigan         10  1  1  28.50   8.17    15     1     7    26.09   0.575
+ 4 Texas A&M        10  2  0  31.25  16.33     3    10     8    24.71   0.536
+ 5 Florida           9  1  1  26.00  14.73    14     5     6    23.59   0.504
+ 6 Miami (Florida)  10  2  0  33.83  16.25     1    15    25    23.12   0.491
+ 7 Alabama           9  2  1  26.50  15.08     7    12     4    22.76   0.480
+ 8 Penn St          11  1  0  22.92  12.75    18     8    46    20.72   0.423
+ 9 Arkansas         10  2  0  26.92  12.17    23     7    49    19.69   0.394
+10 UCLA              9  2  1  30.25  17.83     4    26    20    19.51   0.389
+
+1986
+Teams Rated:           105
+Average Game Score:  31.06  14.47
+Homefield:            2.45
+St. Dev.:            14.98
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Penn St          12  0  0  28.33  11.08     3     1    17    35.89   0.820
+ 2 Oklahoma         11  1  0  42.33   6.75     1     6    55    28.03   0.635
+ 3 Miami (Florida)  11  1  0  35.83  12.50     2     5    30    26.75   0.600
+ 4 Arizona St       10  1  1  31.58  13.92     6     4    35    23.26   0.504
+ 5 Alabama          10  3  0  27.00  12.54    14     3     8    22.38   0.480
+ 6 Auburn           10  2  0  32.92  10.17    20     2    34    21.36   0.451
+ 7 Boston College    9  3  0  28.17  19.42     7    12    24    19.56   0.402
+ 8 Nebraska         10  2  0  37.17  13.75     5    19    63    19.26   0.393
+ 9 UCLA              8  3  1  32.08  18.50     4    24    16    18.22   0.365
+10 Louisiana St      9  3  0  25.50  15.42    24     8    14    17.63   0.350
+
+1987
+Teams Rated:           104
+Average Game Score:  31.43  14.74
+Homefield:            3.36
+St. Dev.:            15.11
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Florida St       11  1  0  40.17  13.58     1     6     2    33.22   0.742
+ 2 Miami (Florida)  12  0  0  34.33  10.42     2     2    27    32.26   0.719
+ 3 Oklahoma         11  1  0  41.08   8.50     9     4    46    25.71   0.546
+ 4 Auburn            9  1  2  26.17  11.00    23     1    18    23.76   0.492
+ 5 Syracuse         11  0  1  31.58  14.08     3    13    66    22.25   0.449
+ 6 Nebraska         10  2  0  37.58  13.67     7     9    28    21.78   0.436
+ 7 Louisiana St     10  1  1  30.42  15.33     8    10    29    21.71   0.434
+ 8 Texas A&M        10  2  0  26.08  14.00    18     5    25    21.70   0.434
+ 9 Michigan St       9  2  1  21.75  12.75    26     3    11    20.46   0.400
+10 UCLA             10  2  0  35.50  16.25     6    20    51    18.47   0.346
+
+1988
+Teams Rated:           105
+Average Game Score:  32.70  14.66
+Homefield:            2.37
+St. Dev.:            15.55
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Notre Dame       12  0  0  32.75  13.00     3     2    28    37.73   0.781
+ 2 Miami (Florida)  11  1  0  34.83   9.67     6     3    15    32.71   0.664
+ 3 Florida St       11  1  0  37.92  14.33     2     8    10    30.84   0.616
+ 4 Michigan          9  2  1  30.08  13.92     9     4    22    28.21   0.547
+ 5 USC              10  2  0  30.83  15.33     8    10     2    24.23   0.440
+ 6 West Virginia    10  1  0  39.18  17.64     4    24    42    23.89   0.431
+ 7 Clemson          10  2  0  28.50  13.08    13     6    11    23.54   0.422
+ 8 UCLA             10  2  0  32.67  15.83    11     7    21    22.49   0.394
+ 9 Auburn           10  2  0  28.17   7.67    42     1    49    21.64   0.372
+10 Nebraska         11  2  0  36.69  15.77    14    12    67    20.19   0.335
+
+1989
+Teams Rated:           106
+Average Game Score:  32.65  15.63
+Homefield:            2.90
+St. Dev.:            15.05
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Notre Dame       12  1  0  32.85  14.54     3     3     1    31.75   0.689
+ 2 Miami (Florida)  11  1  0  35.50  10.58     7     2    31    31.72   0.689
+ 3 Florida St       10  2  0  35.33  16.58     2    12     4    27.34   0.570
+ 4 Tennessee        11  1  0  28.83  18.08     6     9    18    25.02   0.504
+ 5 Auburn           10  2  0  23.67  10.92    31     1    17    23.55   0.462
+ 6 USC               9  2  1  28.00  11.00    25     4     9    22.69   0.437
+ 7 Colorado         11  1  0  38.17  14.25    10    11    56    22.05   0.419
+ 8 Alabama          10  2  0  29.75  18.08     5    17    10    21.80   0.412
+ 9 Michigan         10  2  0  27.92  15.33    14     8     8    21.78   0.412
+10 Illinois         10  2  0  27.67  15.17    16     7    28    21.59   0.406
+
+1990
+Teams Rated:           107
+Average Game Score:  33.14  15.65
+Homefield:            3.10
+St. Dev.:            16.20
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Georgia Tech     11  0  1  31.58  15.50     4     4     6    30.36   0.667
+ 2 Colorado         11  1  1  30.69  17.62     9     2    13    27.84   0.603
+ 3 Miami (Florida)  10  2  0  37.25  15.42     8     3    11    26.77   0.575
+ 4 Florida St       10  2  0  38.25  17.17     2    20    25    25.85   0.551
+ 5 Clemson          10  2  0  27.75   9.08    24     1    18    24.89   0.525
+ 6 Washington       10  2  0  36.08  15.33     6    18    22    21.72   0.441
+ 7 Notre Dame        9  3  0  29.92  21.58    10    13     4    21.57   0.437
+ 8 Texas            10  2  0  29.83  18.92    13     8    16    21.47   0.434
+ 9 Penn St           9  3  0  24.75  14.92    25     5    15    20.34   0.404
+10 Michigan          9  3  0  32.42  16.50    15    17    29    18.71   0.362
+
+1991
+Teams Rated:           106
+Average Game Score:  31.80  14.25
+Homefield:            3.01
+St. Dev.:            15.64
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Washington       12  0  0  41.25   9.58     1     3    21    33.71   0.737
+ 2 Miami            12  0  0  32.17   8.33    11     1    28    33.27   0.727
+ 3 Penn St          11  2  0  36.46  14.15     3     8    19    25.79   0.536
+ 4 Florida St       11  2  0  34.54  14.46    12     4    13    24.92   0.512
+ 5 Alabama          11  1  0  27.00  11.92    18     2    38    23.57   0.476
+ 6 Florida          10  2  0  31.50  15.08    10     6    12    21.94   0.432
+ 7 Michigan         10  2  0  35.00  16.92     5    12     7    21.72   0.426
+ 8 Notre Dame       10  3  0  35.77  22.23     2    31     9    21.41   0.418
+ 9 Syracuse         10  2  0  26.75  16.67    15    10    40    19.54   0.369
+10 Nebraska          9  2  1  37.83  19.17     7    24    23    19.52   0.368
+
+1992
+Teams Rated:           107
+Average Game Score:  30.74  15.01
+Homefield:            3.94
+St. Dev.:            15.16
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Alabama          13  0  0  28.15   9.38     2     1    17    31.64   0.793
+ 2 Florida St       11  1  0  37.17  15.50     1     5    11    25.93   0.657
+ 3 Miami            11  1  0  30.75  13.42     5     7    23    21.74   0.544
+ 4 Notre Dame       10  1  1  36.42  15.08     3    12    36    21.45   0.536
+ 5 Georgia          10  2  0  31.08  12.92    10    11    29    18.92   0.466
+ 6 Florida           9  4  0  24.23  21.85     7    14     1    18.51   0.455
+ 7 Michigan          9  0  3  35.92  14.25     6    22    54    16.65   0.404
+ 8 Tennessee         9  3  0  28.92  16.33    11    17    32    16.41   0.397
+ 9 Stanford         10  3  0  24.62  15.08    26     3    21    16.28   0.394
+10 Syracuse         10  2  0  28.33  17.08    22    10    59    14.75   0.353
+
+1993
+Teams Rated:           106
+Average Game Score:  33.29  15.39
+Homefield:            3.10
+St. Dev.:            16.45
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Florida St       12  1  0  41.23   9.92     3     2    25    32.31   0.662
+ 2 Notre Dame       11  1  0  35.58  17.92     2     9    27    29.53   0.592
+ 3 Auburn           11  0  0  32.09  17.45     4    11    60    27.80   0.547
+ 4 Nebraska         11  1  0  36.42  16.17     7     3    15    27.57   0.541
+ 5 Florida          11  2  0  39.46  18.77     1    24    28    26.76   0.519
+ 6 Wisconsin        10  1  1  29.50  16.25    10     5    32    24.97   0.472
+ 7 Arizona          10  2  0  24.50  13.42    21     1    30    23.40   0.431
+ 8 Ohio St          10  1  1  29.25  16.08    16     4    23    23.30   0.428
+ 9 Penn St          10  2  0  32.33  17.92     8    17    26    22.51   0.408
+10 West Virginia    11  1  0  34.00  17.67    14     8    55    22.23   0.400
+
+1994
+Teams Rated:           107
+Average Game Score:  32.96  16.07
+Homefield:            2.05
+St. Dev.:            15.25
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Penn St          12  0  0  47.00  21.00     1    27    12    31.61   0.709
+ 2 Nebraska         13  0  0  35.31  12.46     4     3    61    31.09   0.696
+ 3 Florida St       10  1  1  35.67  16.67     5     5    16    26.35   0.571
+ 4 Alabama          12  1  0  23.46  14.62    16     1    28    25.31   0.543
+ 5 Colorado         11  1  0  36.58  19.58     2    19    34    24.42   0.518
+ 6 Florida          10  2  1  41.38  17.54     3    15    13    22.07   0.453
+ 7 Miami            10  2  0  30.42  11.92    26     4    17    20.42   0.407
+ 8 Texas A&M        10  0  1  29.00  13.36    21     6    83    19.96   0.395
+ 9 Michigan          8  4  0  27.50  22.33    18    10     1    18.71   0.361
+10 Auburn            9  1  1  32.64  18.09     6    16    36    18.12   0.346
+
+1995
+Teams Rated:           227
+Average Game Score:  33.08  15.10
+Homefield:            2.34
+St. Dev.:            15.34
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Nebraska         12  0  0  53.17  14.50     1     2    25    61.16   0.876
+ 2 Florida          12  1  0  42.92  20.23     2    16    16    48.75   0.610
+ 3 Tennessee        11  1  0  35.92  19.00     4     5    26    46.81   0.558
+ 4 Colorado         10  2  0  37.00  20.00     5     7    14    45.18   0.515
+ 5 Virginia Tech    10  2  0  29.08  13.75    23     1    63    41.77   0.423
+ 6 Florida St       10  2  0  46.92  20.50     3    38    39    41.41   0.413
+ 7 Kansas           10  2  0  28.75  21.75     7    15    31    41.35   0.412
+ 8 Northwestern     10  2  0  25.92  15.08    21     3     5    41.05   0.403
+ 9 Ohio St          11  2  0  36.54  16.92     8    17     8    40.87   0.399
+10 Kansas St        10  2  0  38.00  13.83     6    19    43    40.59   0.391
+
+1996
+Teams Rated:           227
+Average Game Score:  33.44  15.16
+Homefield:            3.07
+St. Dev.:            15.96
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Florida          12  1  0  47.00  17.00     1    15     5    57.19   0.754
+ 2 Florida St       11  1  0  37.17  14.50     3     4    22    50.58   0.592
+ 3 Ohio St          11  1  0  37.92  10.92     8     1     9    49.78   0.571
+ 4 Penn St          11  2  0  30.77  15.62     9     6    34    46.40   0.481
+ 5 Arizona St       11  1  0  40.67  18.00     4    16    56    46.17   0.474
+ 6 Nebraska         11  2  0  42.54  13.38     5    11    20    45.70   0.462
+ 7 Tennessee        10  2  0  36.42  15.42     2    19    25    45.23   0.449
+ 8 Colorado         10  2  0  29.33  18.33    22     3    23    45.05   0.444
+ 9 Brigham Young    14  1  0  39.33  18.47     6    18    82    42.99   0.390
+10 Alabama          10  3  0  24.31  15.00    36     2    14    42.70   0.382
+
+1997
+Teams Rated:           231
+Average Game Score:  33.22  15.42
+Homefield:            3.67
+St. Dev.:            15.45
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Nebraska         13  0  0  46.69  16.46     1     7    41    52.66   0.690
+ 2 Michigan         12  0  0  26.83   9.50    16     1    40    49.22   0.599
+ 3 Florida St       11  1  0  39.00  15.08     3     6    13    48.93   0.591
+ 4 Florida          10  2  0  35.83  17.08     7     3     8    46.61   0.527
+ 5 Tennessee        11  2  0  32.92  22.00     5    12     1    46.24   0.517
+ 6 UCLA             10  2  0  39.75  20.58     4    15    12    45.63   0.500
+ 7 Georgia          10  2  0  31.67  16.25     9     5    19    43.74   0.447
+ 8 Auburn           10  3  0  26.15  19.23    12     4     2    41.46   0.385
+ 9 Washington St    10  2  0  40.25  24.67     2    33    21    41.04   0.374
+10 North Carolina   11  1  0  29.00  12.17    24     2    43    40.88   0.369
+
+1998
+Teams Rated:           234
+Average Game Score:  33.58  16.57
+Homefield:            3.79
+St. Dev.:            14.76
+        Team         W  L  T     PF     PA   Off   Def Sched   Rating     Dom
+ 1 Tennessee        13  0  0  33.15  14.54     3     1    20    49.41   0.752
+ 2 Ohio St          11  1  0  35.83  12.00     7     8    16    43.35   0.592
+ 3 Florida St       11  2  0  30.85  12.38    20     2     2    42.87   0.579
+ 4 Wisconsin        11  1  0  31.83  11.92    18     3    41    42.62   0.572
+ 5 Florida          10  2  0  31.67  13.75    23     5    33    40.56   0.513
+ 6 Michigan         10  3  0  27.62  18.08    19     7    21    39.12   0.471
+ 7 Georgia Tech     10  2  0  35.50  24.58     4    35    49    36.76   0.404
+ 8 Penn St           9  3  0  26.42  15.25    34     6     7    36.20   0.388
+ 9 Texas A&M        11  3  0  23.93  15.29    41     4    11    35.53   0.370
+10 UCLA             10  2  0  39.67  28.33     1    56    17    35.18   0.360
