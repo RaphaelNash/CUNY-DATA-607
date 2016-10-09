@@ -1,5 +1,6 @@
 [  
    {  
+   	  "book id":"Book1",
       "title":"R Cookbook",
       "authors":[  
          "Paul Teetor"
@@ -7,6 +8,7 @@
       "price":46.83
    },
    {  
+   	  "book id":"Book2",
       "title":"R In Action",
       "authors":[  
          "Robert Kabacoff"
@@ -14,7 +16,8 @@
       "price":33.96
    },
    {  
-      "title:"R for Data Science",
+   	  "book id":"Book2",
+      "title":"R for Data Science",
       "authors":[  
          "Hadley Wickham",
          "Garret Grolemund"
