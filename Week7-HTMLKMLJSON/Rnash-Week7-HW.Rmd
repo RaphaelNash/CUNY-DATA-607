@@ -1,0 +1,127 @@
+---
+title: "CUNY-DATA-607-Week7-JSON-XML-HTML"
+author: "Raphael Nash"
+date: "10/8/2016"
+output:
+  html_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library("rvest")
+library("knitr")
+library("jsonlite")
+library("RCurl")
+```
+
+#Overview
+
+The purpose of this assignment is to explore the difference between JSON, XML and HTML files.  Create a file of each type to store information on 3 books.  Then parse the files into a data frame.  Are all three data frames the same?
+
+#Parse XML
+```{r}
+
+#Create empty data frame
+xml_books_df <- data.frame(id = character(),
+                           title = character(),
+                          authors = I ( list() ) ,
+                           price = numeric()
+                           )
+```
+   
+XML file looks like: 
+<books>
+  <book>
+  .
+  .
+  .
+  </book>
+<book>
+```{r}                        
+#read file from github                           
+xml_file <- getURL ("https://raw.githubusercontent.com/RaphaelNash/CUNY-DATA-607/master/Week7-HTMLKMLJSON/books.xml") %>% 
+  read_xml()
+
+#loop through all of the "book" nodes in the file
+for ( i in 1:length(xml_nodes(xml_file, "book"))) {
+
+  book_node <-html_nodes(xml_file, "book")[i]
+  
+  # get the ID
+  id<- html_nodes(book_node, "id") %>% 
+    xml_text()
+  
+  # get the title 
+  title<- html_nodes(book_node, "title") %>% 
+    xml_text()
+    
+  #get the authors list   
+  authors_node <- html_nodes(book_node, "authors") 
+  
+  authors_list <- lapply(authors_node, function(x)  html_nodes(authors_node, "author") %>% 
+    xml_text() ) %>% 
+    I()
+    
+  # get the price 
+  price <- html_nodes(book_node, "price") %>% 
+    xml_text()
+ 
+ #create a row in a temporary data frame
+ temp_df <- data.frame(
+   id = id,
+   title = title,
+   price = price,
+   authors = authors_list
+ )
+
+#add the temp row to the main data frame
+xml_books_df <- rbind(xml_books_df, temp_df)
+}
+    
+
+kable(xml_books_df)
+```
+
+#Parse HTML
+```{r}
+
+#Read file from git hub and extract the table
+html_nodes  <- getURL ("https://raw.githubusercontent.com/RaphaelNash/CUNY-DATA-607/master/Week7-HTMLKMLJSON/books.html") %>% 
+  read_html() %>% 
+  html_nodes( xpath="//table[1]")
+
+table <- html_nodes[1] 
+
+#Convert to cells to a data frame
+ html_books_df <- html_table(table, fill=TRUE, header = TRUE)[[1]]
+
+kable(html_books_df)
+```
+
+#Parse JSON
+```{r}
+
+#Read JSON file from github
+json_file <-  getURL ("https://raw.githubusercontent.com/RaphaelNash/CUNY-DATA-607/master/Week7-HTMLKMLJSON/books.json")
+
+#Convert JSON to a data frame
+json_books_df <- fromJSON(json_file)
+
+kable(json_books_df)
+```
+
+#Looks at Structure of Data.Frames
+```{r}
+str(xml_books_df)
+
+str(html_books_df)
+
+str(json_books_df)
+```
+
+#Conclusions
+The data frames created from the XML and JSON files are identical.  The only difference between the HTML file and the other files is that the authors column is a list object in the XML and JSON files while in the HTML file the authors field is just a text comma seperated list.  
