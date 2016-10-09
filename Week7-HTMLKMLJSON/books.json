@@ -1,45 +1,24 @@
-{
-
-   "Books": {
-
-      "Book1": {
-
-         "title:": "R Cookbook",
-
-         "authors": [
-
-            "Paul Teetor"
-
-         ]
-
-      },
-
-      "Book2": {
-
-         "title": "R In Action",
-
-         "authors": [
-
-            "Robert Kabacoff"
-
-         ]
-
-      },
-
-      "Book3": {
-
-         "title": "R for Data Science",
-
-         "author": [
-
-            "Hadley Wickham",
-
-            "Garret Grolemund"
-
-         ]
-
-      }
-
+[  
+   {  
+      "title":"R Cookbook",
+      "authors":[  
+         "Paul Teetor"
+      ],
+      "price":46.83
+   },
+   {  
+      "title":"R In Action",
+      "authors":[  
+         "Robert Kabacoff"
+      ],
+      "price":33.96
+   },
+   {  
+      "title:"R for Data Science",
+      "authors":[  
+         "Hadley Wickham",
+         "Garret Grolemund"
+      ],
+      "price":39.99
    }
-
-}
+]
