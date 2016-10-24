@@ -1,0 +1,76 @@
+---
+title: "CUNY-DATA-607-WebAPIs"
+author: "Raphael Nash"
+date: "10/23/2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Assignment
+Your task is to choose one of the New York Times APIs, construct an interface in R to read in the JSON data, and transform it to an R dataframe.
+
+#My Take
+I am sure that every publishing executive has a dashboard that shows how the books on the NY Times are performing. While the code below calls the NY Times API and gets the data from the "Combined Print and E-Book Fiction" list,  I am sure this is just one square on the publisher's NY Times Bestseller Dashboard.  I am sure they have squares for each list on the NY Times Best Sellers list on thier Dashboard.   
+
+#Create the Dashboard Tile
+```{r}
+library(httr)
+library(ggplot2)
+library(knitr)
+
+
+#Call API and store payload
+api_key <- readLines("api_key.txt") [[1]]
+base_url <- "https://api.nytimes.com/svc/books/v3/lists//.json"
+query_list = list( `api-key`=api_key, list="combined-print-and-e-book-fiction")
+response <- GET(base_url, query=query_list)
+payload <- content(response)
+
+book_names <- vector()
+weeks_on_list <- vector()
+current_rank <- vector()
+prev_rank <- vector()
+ 
+#Loop through books on the best sellers list
+for ( i in 1: 20) {
+  book_names <- c( payload$results[[i]]$book_details[[1]]$title, book_names) 
+  weeks_on_list <- c(  as.numeric  (payload$results[[i]]$weeks_on_list), weeks_on_list   )
+  current_rank <- c(  as.numeric  (payload$results[[i]]$rank), current_rank   )
+  prev_rank <- c(  as.numeric  (payload$results[[i]]$rank_last_week), prev_rank   )
+}
+
+#Create a dataframe
+books_df = data.frame(
+  book_names = book_names,
+  weeks_on_list = weeks_on_list,
+  current_rank = current_rank,
+  prev_rank = prev_rank
+  )
+
+#Freeze data frame so books show up in ggplot in the correct order
+books_df$book_names <- factor(books_df$book_names, levels = books_df$book_names)
+
+
+#Add derived column showing direction of the book
+rising_falling_static <- ifelse ( current_rank >prev_rank , "Rising", 
+                                  ifelse( current_rank == prev_rank, "No Change", "Falling" ))
+books_df <- cbind(books_df,rising_falling_static )
+books_df$rising_falling_static <- factor(books_df$rising_falling_static)
+
+kable(books_df)
+
+ ggplot( data = books_df, aes  (x = book_names, y=weeks_on_list,
+                                fill=rising_falling_static )) + 
+   geom_bar(stat="identity") + 
+   coord_flip() +
+   scale_fill_manual(values=c("#ff0000", "#ffff00", "#00ff00")) + 
+   xlab("Book Title") + 
+   ylab("Weeks on List") +
+   ggtitle ("NY Times Best Seller Dashboard") +
+   theme(legend.position="bottom") +
+   guides(fill=guide_legend(title="Direction of Change Since Last Week:"))
+
+```
