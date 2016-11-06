@@ -1,0 +1,150 @@
+---
+  title: "CUNY-DATA-607-Week10-Rnash"
+author: "Raphael Nash"
+date: "10/31/2016"
+output: html_document
+---
+  
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(RTextTools)
+library(tm)
+library(SnowballC)
+library(plyr)
+library(stringr)
+library(readr)
+library(wordcloud)
+library(knitr)
+```
+
+#Assignment 
+Perform text processing to figure out if 
+
+
+#Train the Algo
+
+Read in known spam and known ham
+```{R}
+#Load Spam and Ham into a Corpus
+spam_corpus <- Corpus(DirSource("spam/spam"))
+#Downloaded from: http://spamassassin.apache.org/publiccorpus/20021010_spam.tar.bz2
+
+ham_corpus <- Corpus(DirSource("easy_ham/easy_ham"))
+#Downloaded from: http://spamassassin.apache.org/publiccorpus/20021010_easy_ham.tar.bz2
+
+meta(spam_corpus, tag = "type") <- "spam"
+meta(ham_corpus, tag = "type") <- "ham"
+
+#Combine Corpi to create a training corupus
+
+training_courpus <- sample(c(ham_corpus, spam_corpus, recursive=T))
+
+is_spam <- ifelse( unlist(meta(training_courpus, "type")[,1]) == "spam",1,0)
+```
+
+Clean training corpus
+```{r}
+training_courpus <- tm_map( training_courpus, str_replace_all, pattern = "[[:punct:]]", replacement = " ")
+training_courpus <- tm_map( training_courpus, removeWords, words = stopwords("en"))
+
+training_courpus <- tm_map( training_courpus, tolower)
+training_courpus <- tm_map( training_courpus, stemDocument)
+training_courpus <- tm_map( training_courpus, PlainTextDocument)
+
+training_tdm <- DocumentTermMatrix(training_courpus) 
+```
+
+Train the SVM algo on
+```{r}
+t_corpus_length <- length(is_spam)
+
+training_container <- create_container(
+  training_tdm,
+  labels = is_spam,
+  trainSize = 1:floor(t_corpus_length*.2),
+  testSize = ceiling(t_corpus_length*.8) : t_corpus_length,
+  virgin = FALSE
+)
+
+svm_model <- train_model(training_container, "SVM")
+```
+
+Score the results
+```{r}
+svm_out <- classify_model(training_container, svm_model)
+svm_summary <- create_analytics(training_container, svm_out)
+svm_summary@algorithm_summary
+```
+
+
+#Run the alog on new data
+Note:  This new corpus is 100% spam
+
+Load the unkown corpus
+```{r}
+unkown_corpus <-    Corpus(DirSource("spam_2/spam_2")) #https://spamassassin.apache.org/publiccorpus/20050311_spam_2.tar.bz2
+
+meta(unkown_corpus, tag = "type") <- "unkown"
+```
+
+Clean the unkwown corpus
+```{r}
+unkown_corpus <- tm_map( unkown_corpus, str_replace_all, pattern = "[[:punct:]]", replacement = " ")
+unkown_corpus <- tm_map( unkown_corpus, removeWords, words = stopwords("en"))
+
+unkown_corpus <- tm_map( unkown_corpus, tolower)
+unkown_corpus <- tm_map( unkown_corpus, stemDocument)
+
+unkown_corpus <- tm_map( unkown_corpus, PlainTextDocument)
+```
+
+
+Run the classify the unkown corpus
+```{r}
+training_tdm <- DocumentTermMatrix(training_courpus) 
+
+unkown_tdm <- DocumentTermMatrix(unkown_corpus, list(dictionary=findFreqTerms(training_tdm)) )
+
+
+unkown_container <- create_container(
+  unkown_tdm,
+  labels = vector(),
+  testSize = 1:nrow(unkown_tdm),
+  virgin = TRUE
+)
+
+
+unkown_results_summary <- classify_model(unkown_container, svm_model)
+```
+
+Get a summary of the results of the classification
+```{r}
+
+kable(count(unkown_results_summary, 'SVM_LABEL')) 
+
+```
+
+Note: remember when viewing results 1 = spam and 0 = ham
+
+#Word Clouds
+
+Word Cloud of Unkown Corpus
+```{r}
+wordcloud(unkown_corpus, max.words = 100)
+```
+
+Word Cloud of Known Spam Corpus
+```{r}
+wordcloud(spam_corpus, max.words = 100)
+```
+
+Word Cloud of Known Ham Corpus
+```{r, warning=FALSE, message=FALSE}
+wordcloud(ham_corpus, max.words = 100)
+```
+
+#Conclusions
+An SVM is pretty good about classifing emails as spam or ham, but I should have probably scored other models. However, my computer is apparently too slow for text processing.
