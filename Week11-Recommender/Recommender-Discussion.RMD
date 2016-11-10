@@ -1,0 +1,60 @@
+---
+title: "CUNY-DATA-607-Recommender-Discussion"
+author: "Raphael Nash"
+date: "11/9/2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Assignment 
+Your task is to analyze an existing recommender system that you find interesting. 
+
+#Introduction to issue
+One of the perpetual issues in higher education is getting students to actually complete there degrees.  Many large universities have huge course catalogs and difficult to understand graduation.  The City University of NY does offer its students a tool called “Degree Works” on the portal to assist students and advisors understand what courses a student needs to take to fulfill requirements, however it is relatively static and is based on concrete rules that someone in the registrar’s office codes into the system.  The system cannot make a recommendation of what course to take this semester and if multiple courses that fulfill the requirement exist.  A recommender system in this space could help the student pick the best courses to take next to fulfill requirements and enhance student success.  For example, if there are multiple levels of a science course, a recommender system could help the student pick the course that they would be the most successful in.  
+
+#What is available
+By performing internet searches, I could only find one example of a course recommender system for higher education in existence today.  It is “Degree Compass”.   It was developed by Austin Peay State University on a grant by the Bill and Melinda Gates foundation.  The Learning Management Company Desire 2 Learn has purchased the intellectual property to this system and has embedded it into their learning management analytics platform.  
+
+#Designing an Algorithm
+A course recommender system for higher education has the following inputs at its disposal:
+1.	High School/Previous College transcripts
+2.	Current College Transcripts
+3.	SAT/ACT Test Scores and other 
+4.	Declared Major and Minor
+5.	Degree Plan for general education and declared major and minor
+
+One of the challenges that a system like this will have is that the declared major and minor are not always the major and minor that the student is actually perusing.  An example of this is a student tells the school and their parents they are pursuing Computer Science and in reality are perusing Philosophy.    This system as it easier than Amazon etc, because they know the courses that the student actually took are for themselves not others and 
+
+To make a recommendation the system will have to decide the following:
+1.	Are you on track.
+This can be accomplished by comparing your stated objectives to the official degree audit.  If you are not on course a recommender system can use other degree audits to see if you are fitting in with any of them.  
+
+2.	Will you pass the course?
+The system can automatically determine if it thinks you are going to pass by preforming a regression on your GPA, test scores and grades you got on courses of the same level and filter out courses that it does not think you will pass
+
+3.	Collaborative Item Filtering
+The system could then use collaborative item filtering to find nearest neighbors to filter out courses that you should take.  This would compare your past grades and course selections to others in the system.  If possible to assist with electives the administrators could send out interest surveys to all students and use the results of these interest surveys to perform nearest neighbor type filtering on elective courses.
+
+#Views to the System
+
+This system would have three primary users, the student, the advisor, the administration, student affairs.  Each of these personas would use the recommendation output in a different fashion.
+
+* The Student
+
+When it comes time to register the student would see recommendation of what classes they should register for on registration screen like appear on Amazon or Netflix.  These recommendations could update every time a student adds a new class to their check out basket.
+
+* The Advisor
+
+The advisor could have a list of recommended classes that that they could access for each student just before they come into their advising appointment.  Also The advisor should have a list of students that are off course and in danger of failing.  The advisor should only use the output to devise strategies to help get the student back on track.  
+
+* The Registrar
+
+Creating the schedule of courses is a major hassle for the registrar.  The registrar could have a report of expected enrollment for each class before the semester starts, by running the algorithm in a batch mode for all students.  One warning on this is that the registrar should try not to create a feedback loop where they are only offering the exact amount of seats that the system is recommending as the system may not be 100 % accurate.  The registrar could also have a list that they could give to student affairs of students who are in danger of failing.  Again this list of student off track or in danger of failing should only be used to get students back on track.  Caution should be used to not create a “Weapon of Math Destruction”
+
+#References:  
+http://www.apsu.edu/academic-affairs/degree-compass-and-my-future
+
+http://www.chronicle.com/article/College-Degrees-Designed-by/132945/
