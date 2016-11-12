@@ -1,0 +1,104 @@
+---
+title: "CUNY-DATA-607-Project4-NoSQL"
+author: "Raphael Nash"
+date: "11/11/2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warnings = FALSE}
+library(RNeo4j)
+library(readr)
+library(dplyr)
+library(knitr)
+library(ggmap)
+library(ggplot2)
+library(lubridate)
+```
+
+#Assingment
+This assignment is to take a relational data base and convert it to a No SQL database using either MongoDB or Neo4j
+
+#My Take
+I download the station list and the trip data from the Health Ride Pittsburgh (https://healthyridepgh.com/data/) website for 2016Q3.  Healthy ride Pittsburgh is Pittsburgh, PA's bike share program.  I wanted to use a graph database (Neo4j) to find where do people bike ride from when with rent a bike at PNC Park, the home of the Pittsburgh Pirates.  
+
+
+```{r message=FALSE, warnings = FALSE}
+#Initialize graph 
+
+graph = startGraph("http://localhost:7474/db/data/", username = "neo4j", password = "password")
+clear(graph, input = FALSE)
+
+addConstraint(graph, "stations", "station_number")
+
+```
+
+```{r message=FALSE, warnings = FALSE}
+#Load Data from CSV files
+
+trips <- read_csv("https://raw.githubusercontent.com/RaphaelNash/CUNY-DATA-607/master/Project4-NoSQL/HealthyRide-Rentals-2016-Q3.csv")
+stations <- read_csv("https://raw.githubusercontent.com/RaphaelNash/CUNY-DATA-607/master/Project4-NoSQL/HealthyRideStations2016.csv")
+
+head(trips)
+head(stations)
+```
+
+```{r message=FALSE, warnings = FALSE}
+#Load Stations into the nodes of the graph
+
+for ( i in 1: nrow(stations ) ) {
+createNode (graph, "stations", station_number = stations[[i,"Station #"]], name = stations[[i,"Stations Name"]] , num_of_racks = stations[[i,"# of Racks" ]], lat = stations[[i,"Latitude"]] , long = stations[[i,"Longitude"]] )
+}
+```
+
+
+```{r message=FALSE, warnings = FALSE}
+#Load relationships into graph 
+
+query = "
+MATCH (o:stations),(d:stations)
+WHERE o.station_number =  {origin_id} AND  d.station_number =  {destination_id} 
+CREATE (o)-[r:BIKES_TO]->(d) "
+
+t = newTransaction(graph)
+
+for (i in 1 :nrow(trips)) {
+  origin_id = trips[i, ]$`To station id`
+  destination_id = trips[i, ]$`From station id`
+  trip_id = trips[i, ]$`Trip id`
+  bike_id = trips[i, ]$`Bikeid`
+  start_time = mdy_hm(trips[i, ]$Starttime, tz = "EST")
+  end_time = mdy_hm(trips[i, ]$Stoptime, tz = "EST")
+   
+  appendCypher(t, 
+               query, 
+               origin_id = origin_id, 
+               destination_id = destination_id,
+               trip_id =trip_id,
+               start_time = start_time,
+               end_time = end_time,
+               bike_id = bike_id) 
+}
+
+commit(t)
+
+```
+
+```{r message=FALSE, warnings = FALSE}
+#Query the graph to get all trips from PNC Park (Station #1013)
+
+trips_from_pnc <- cypher(graph, "match (o:stations)-->(d:stations) where o.station_number = 1013 return d.lat, d.long")
+trips_from_pnc <- unique(trips_from_pnc)
+
+head(trips_from_pnc)
+```
+
+```{r warning=FALSE, message=FALSE}
+#Map Destinations on the map
+
+map <- get_map(location = c(lon = -79.96, lat = 40.442), zoom = 13, scale = 2, maptype = "roadmap")
+ggmap(map) + geom_point(data=trips_from_pnc , aes(y=d.lat, x=d.long) ,color="red", size=1)
+```
