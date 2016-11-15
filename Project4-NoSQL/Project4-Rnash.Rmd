@@ -25,9 +25,9 @@ This assignment is to take a relational data base and convert it to a No SQL dat
 #My Take
 I download the station list and the trip data from the Health Ride Pittsburgh (https://healthyridepgh.com/data/) website for 2016Q3.  Healthy ride Pittsburgh is Pittsburgh, PA's bike share program.  I wanted to use a graph database (Neo4j) to find where do people bike ride from when with rent a bike at PNC Park, the home of the Pittsburgh Pirates.  
 
-
-```{r message=FALSE, warnings = FALSE}
 #Initialize graph 
+```{r message=FALSE, warnings = FALSE}
+
 
 graph = startGraph("http://localhost:7474/db/data/", username = "neo4j", password = "password")
 clear(graph, input = FALSE)
@@ -36,28 +36,28 @@ addConstraint(graph, "stations", "station_number")
 
 ```
 
-```{r message=FALSE, warnings = FALSE}
 #Load Data from CSV files
-
+```{r message=FALSE, warnings = FALSE}
 trips <- read_csv("https://raw.githubusercontent.com/RaphaelNash/CUNY-DATA-607/master/Project4-NoSQL/HealthyRide-Rentals-2016-Q3.csv")
 stations <- read_csv("https://raw.githubusercontent.com/RaphaelNash/CUNY-DATA-607/master/Project4-NoSQL/HealthyRideStations2016.csv")
 
-head(trips)
-head(stations)
+#NOTE:  While this data is not in a relational database per say, the data is relational.  It is 2 tables Stations, and Trips and the Trips table has 2 foriegn keys back to the stations table.  One for destination and one for origin.  
+
+kable(head(trips,5))
+kable(head(stations,5))
 ```
 
-```{r message=FALSE, warnings = FALSE}
 #Load Stations into the nodes of the graph
+```{r message=FALSE, warnings = FALSE}
+
 
 for ( i in 1: nrow(stations ) ) {
 createNode (graph, "stations", station_number = stations[[i,"Station #"]], name = stations[[i,"Stations Name"]] , num_of_racks = stations[[i,"# of Racks" ]], lat = stations[[i,"Latitude"]] , long = stations[[i,"Longitude"]] )
 }
 ```
 
-
-```{r message=FALSE, warnings = FALSE}
 #Load relationships into graph 
-
+```{r message=FALSE, warnings = FALSE}
 query = "
 MATCH (o:stations),(d:stations)
 WHERE o.station_number =  {origin_id} AND  d.station_number =  {destination_id} 
@@ -87,18 +87,35 @@ commit(t)
 
 ```
 
+#Map Destinations from PNC Park (Station #1013)
 ```{r message=FALSE, warnings = FALSE}
-#Query the graph to get all trips from PNC Park (Station #1013)
 
 trips_from_pnc <- cypher(graph, "match (o:stations)-->(d:stations) where o.station_number = 1013 return d.lat, d.long")
 trips_from_pnc <- unique(trips_from_pnc)
 
-head(trips_from_pnc)
-```
-
-```{r warning=FALSE, message=FALSE}
-#Map Destinations on the map
-
 map <- get_map(location = c(lon = -79.96, lat = 40.442), zoom = 13, scale = 2, maptype = "roadmap")
 ggmap(map) + geom_point(data=trips_from_pnc , aes(y=d.lat, x=d.long) ,color="red", size=1)
 ```
+
+
+#Relational Database Pro's / Cons
+
+##Pros: 
+
+The main pro of a relational database is that it was built for transactions in a traditional business/ERP setting.  It is highly efficient when dealing with transactional rather than reporting or analytic data.   SQL the main query language of a relational database is simple and widely understood.  Most relational databases follow ACID (Atomicity, Consistency, Isolation, Durability) principles, wich for tranditional business transactional worklaods is critical.  The toolset around relational database is extremely mature.  Very good at aggregation and windowing functions.  
+
+Traditional ACID  is important in situations like banking or shopping when you have to do multi-phsased commits.  This ensures things like when you take money out of the ATM, the money is properly deducted from your account if the transaction fails in-flight.  In many companies the ATM database will be in one system and the core banking in another and changes to those sysems need to be commited in an all or nothing fashion.  
+
+##Cons:  
+
+The main con's of a relational database is that is not built for analytic, business intelligence or reporting workloads. When modeling complex data the database design can get rather convoluted rather quickly.  SQL statements can get very large and can be cumbersome and time consuming to tune.  Fault tolerance/High Availablity of the ACID model is hard to scale.  It is easier to scale up then out.  This requires investment in large expensive servers.  Requires Object-Relational or Cursor processing when integrating results into code. 
+
+#NoSQL Database Pro's/Cons
+
+##Pros:  
+  Data format is highly flexible and can model a variety of senarios with relative ease.  Supports more modern work flows like those built around networks or documents (CRM) more easiliy  Query language is compact when compared to sql.  Built for analytic workloads.   Supports more flexible transactions than traditional ACID transactions, like eventual consistency, which may be ok and even disierable in situtuations like facebook that need to scale out but the users do not need a consistent answer on every query. (Some NoSQL are begining to support traditional ACID transations, but this is at the cost of the ease of scale out) It is easy to deploy in a fault tolerant/high availability seneraio on commodity hardware.  When writing code there is less translation needed from the database tier to the applicaiton tier (I can put a JSON object directly into a Java Object). There are main NoSQL databases so you can pick one that meets the needs of your individual project.  
+  
+##Cons:
+  Each NoSQL database has its own query language thus introduces a learning curve.  Not all NoSQL databases are ACID Compliant (however depending on your wokflow this may not matter).  Tooling is less mature.  Does not readiliy integrate with Business Intellegence toolsets (Although this is changing).  Alot of NoSQL database run in the JVM this adds overhead when compared to traditional RDBMSs that run in low level code.  Traditional aggregation and windowing functions ( Row_number/lag/lead/avg/sum) are slower in NoSQL databases than traditional RDBMSs.
+  
+*Note*: The landscape is rapidly evolving and anything said above may be disproven rather rapidly.  I know people who are huge fans of NoSQL database and hate traditional databases and I know people who are huge fans of tranditional database and hate NoSQL.   
